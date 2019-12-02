@@ -168,4 +168,34 @@ public final class CommandLineInterface {
 
         return parameters;
     }
+    
+    /**
+     *
+     * @param parameter
+     * @return
+     */
+    public Character getParameterAsChar(String parameter) {
+        String value = line.getOptionValue(parameter);
+
+        if (value == null && defaults.containsKey(parameter)) {
+            value = defaults.get(parameter);
+        }
+
+        return value.charAt(0);
+    }
+    
+    /**
+     *
+     * @param parameter
+     * @return
+     */
+    public String getParameterAsLowerCase(String parameter) {
+        String value = line.getOptionValue(parameter);
+
+        if (value == null && defaults.containsKey(parameter)) {
+            value = defaults.get(parameter);
+        }
+
+        return value.toLowerCase();
+    }
 }
