@@ -597,7 +597,7 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 			--metadata="${METADATA}" \
 			--sample=${SAMPLE} \
 			--header \
-			--delimiter="${DELIMITER}" \
+			--delimiter="${FILE_INPUT_DELIMITER}" \
 			--filename=*.csv  \
 			--target=metadata \
 			--dialect=${DIALECT} \
@@ -611,7 +611,7 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 		--metadata="${METADATA}" \
 		--sample=${SAMPLE} \
 		--header \
-		--delimiter="${DELIMITER}" \
+		--delimiter="${FILE_INPUT_DELIMITER}" \
 		--filename=*.csv  \
 		--target=metadata \
 		--dialect=${DIALECT} \
