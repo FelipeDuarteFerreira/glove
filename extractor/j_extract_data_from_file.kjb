@@ -590,6 +590,9 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 
 	echo "Dialect: " $DIALECT
 
+	echo ${DELIMITER}
+	echo ${FILE_INPUT_DELIMITER}
+
 	if [ ${DEBUG} = 1 ] ; then
 		echo "DEBUG:	java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
 			--folder=${RAWFILE_QUEUE_SAMPLE_PATH} \
