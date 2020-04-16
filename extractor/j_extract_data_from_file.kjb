@@ -528,6 +528,10 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
 mkdir -p ${RAWFILE_QUEUE_PATH}
 mkdir -p ${RAWFILE_QUEUE_SAMPLE_PATH}
 
+	echo ${DELIMITER}
+	echo ${FILE_INPUT_DELIMITER}
+	echo ${FILE_INPUT_BUCKET}
+
 error_check(){
 	if [ $? -gt 0 ]; then
        	 echo "An error has occurred :_("
@@ -547,10 +551,6 @@ if [[ ${FILE_OUTPUT_MODE} != "append" ]]; then
 	HAS_RECORD=`head -5 ${RAWFILE_QUEUE_PATH}${SCHEMA_NAME}_${TABLE_NAME}*.csv | wc -l`
 else
 	FILE_INDEX=0
-
-	echo ${DELIMITER}
-	echo ${FILE_INPUT_DELIMITER}
-	echo ${FILE_INPUT_BUCKET}
 
 	for i in `ls ${RAWFILE_QUEUE_PATH}*`
 	do
@@ -593,9 +593,6 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 	fi 
 
 	echo "Dialect: " $DIALECT
-
-	echo ${DELIMITER}
-	echo ${FILE_INPUT_DELIMITER}
 
 	if [ ${DEBUG} = 1 ] ; then
 		echo "DEBUG:	java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
