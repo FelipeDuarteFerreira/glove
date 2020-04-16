@@ -559,7 +559,7 @@ else
 				SAMPLE_FILE_RECORD=`cat ${RAWFILE_QUEUE_SAMPLE_FILE} | wc -l`
 			
 				if [ ${SAMPLE} -gt ${SAMPLE_FILE_RECORD} ]; then
-					sed '1d' ${i} >> ${RAWFILE_QUEUE_SAMPLE_FILE}	
+					# sed '1d' ${i} >> ${RAWFILE_QUEUE_SAMPLE_FILE}	
 					error_check	
 				else
 					break
