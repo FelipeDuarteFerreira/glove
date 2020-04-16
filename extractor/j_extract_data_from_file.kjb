@@ -550,6 +550,7 @@ else
 
 	echo ${DELIMITER}
 	echo ${FILE_INPUT_DELIMITER}
+	echo ${FILE_INPUT_BUCKET}
 
 	for i in `ls ${RAWFILE_QUEUE_PATH}*`
 	do
