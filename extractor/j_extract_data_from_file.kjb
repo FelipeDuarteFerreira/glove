@@ -607,7 +607,7 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 	echo "INFERRED METADATA"
 	cat ${METADATA_QUEUE_METADATA_FILE}
 
-	rm -rf  ${RAWFILE_QUEUE_SAMPLE_PATH}
+	# rm -rf  ${RAWFILE_QUEUE_SAMPLE_PATH}
 	error_check
 else
 	echo "Nothing to load from ${RAWFILE_QUEUE_PATH}!"
