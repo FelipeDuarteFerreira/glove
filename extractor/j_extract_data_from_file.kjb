@@ -559,7 +559,7 @@ else
 				SAMPLE_FILE_RECORD=`cat ${RAWFILE_QUEUE_SAMPLE_FILE} | wc -l`
 			
 				if [ ${SAMPLE} -gt ${SAMPLE_FILE_RECORD} ]; then
-					# sed '1d' ${i} >> ${RAWFILE_QUEUE_SAMPLE_FILE}	
+					sed '1d' ${i} >> ${RAWFILE_QUEUE_SAMPLE_FILE}	
 					error_check	
 				else
 					break
@@ -600,7 +600,7 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 		--sample=${SAMPLE} \
 		--header \
 		--delimiter="${DELIMITER}" \
-		--filename=${SCHEMA_NAME}_${TABLE_NAME}.csv  \
+		--filename=*.csv  \
 		--target=metadata \
 		--dialect=${DIALECT} \
 		--reservedWords=${RESERVED_WORDS_FILE}
@@ -609,7 +609,9 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 	echo "INFERRED METADATA"
 	cat ${METADATA_QUEUE_METADATA_FILE}
 
-	# rm -rf  ${RAWFILE_QUEUE_SAMPLE_PATH}
+	if [ ${DEBUG} = 0 ] ; then
+		rm -rf  ${RAWFILE_QUEUE_SAMPLE_PATH}
+	fi
 	error_check
 else
 	echo "Nothing to load from ${RAWFILE_QUEUE_PATH}!"
