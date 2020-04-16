@@ -590,7 +590,19 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 
 	echo "Dialect: " $DIALECT
 
-	ls ${RAWFILE_QUEUE_SAMPLE_PATH}
+	if [ ${DEBUG} = 1 ] ; then
+		echo "DEBUG:	java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
+			--folder=${RAWFILE_QUEUE_SAMPLE_PATH} \
+			--output=${METADATA_QUEUE_PATH} \
+			--metadata="${METADATA}" \
+			--sample=${SAMPLE} \
+			--header \
+			--delimiter="${DELIMITER}" \
+			--filename=*.csv  \
+			--target=metadata \
+			--dialect=${DIALECT} \
+			--reservedWords=${RESERVED_WORDS_FILE}"
+	fi
 
 	echo "Extracting metadata"
 	java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
