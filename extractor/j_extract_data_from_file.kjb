@@ -548,6 +548,9 @@ if [[ ${FILE_OUTPUT_MODE} != "append" ]]; then
 else
 	FILE_INDEX=0
 
+	echo ${DELIMITER}
+	echo ${FILE_INPUT_DELIMITER}
+
 	for i in `ls ${RAWFILE_QUEUE_PATH}*`
 	do
 		if [ -f "${i}" ]; then
@@ -591,7 +594,6 @@ if [ ${HAS_RECORD} -gt 1 ]; then
 	echo "Dialect: " $DIALECT
 
 	echo ${DELIMITER}
-	echo ${FILE_INPUT_DELIMITER}
 	echo ${FILE_INPUT_DELIMITER}
 
 	if [ ${DEBUG} = 1 ] ; then
