@@ -358,7 +358,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>640</xloc>
       <yloc>48</yloc>
       <attributes_kjc />
     </entry>
@@ -371,7 +371,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>640</xloc>
       <yloc>272</yloc>
       <attributes_kjc />
     </entry>
@@ -395,7 +395,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>864</xloc>
       <yloc>48</yloc>
       <attributes_kjc />
     </entry>
@@ -422,7 +422,7 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>384</yloc>
       <attributes_kjc />
     </entry>
@@ -444,7 +444,7 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>976</xloc>
       <yloc>48</yloc>
       <attributes_kjc />
     </entry>
@@ -466,7 +466,7 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>640</xloc>
       <yloc>384</yloc>
       <attributes_kjc />
     </entry>
@@ -491,7 +491,7 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>976</xloc>
       <yloc>496</yloc>
       <attributes_kjc />
     </entry>
@@ -504,7 +504,7 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>976</xloc>
       <yloc>608</yloc>
       <attributes_kjc />
     </entry>
@@ -636,7 +636,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>528</xloc>
       <yloc>272</yloc>
       <attributes_kjc />
     </entry>
@@ -660,7 +660,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>640</xloc>
       <yloc>160</yloc>
       <attributes_kjc />
     </entry>
@@ -675,7 +675,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>160</yloc>
       <attributes_kjc />
     </entry>
@@ -691,7 +691,7 @@ Check if query returned at least one record or if happened error on the process.
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>528</xloc>
       <yloc>384</yloc>
       <attributes_kjc />
     </entry>
@@ -715,7 +715,7 @@ Check if query returned at least one record or if happened error on the process.
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>864</xloc>
       <yloc>160</yloc>
       <attributes_kjc />
     </entry>
@@ -728,7 +728,7 @@ Check if query returned at least one record or if happened error on the process.
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>528</xloc>
       <yloc>608</yloc>
       <attributes_kjc />
     </entry>
@@ -741,7 +741,7 @@ Check if query returned at least one record or if happened error on the process.
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>528</xloc>
       <yloc>496</yloc>
       <attributes_kjc />
     </entry>
@@ -763,7 +763,7 @@ Check if query returned at least one record or if happened error on the process.
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>496</yloc>
       <attributes_kjc />
     </entry>
@@ -817,7 +817,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>608</yloc>
       <attributes_kjc />
     </entry>
@@ -829,7 +829,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>720</yloc>
       <attributes_kjc />
     </entry>
@@ -872,7 +872,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>976</xloc>
       <yloc>384</yloc>
       <attributes_kjc />
     </entry>
@@ -885,7 +885,7 @@ fi</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>864</xloc>
       <yloc>272</yloc>
       <attributes_kjc />
     </entry>
@@ -969,6 +969,52 @@ FILE_DONE_BUCKET		== ${FILE_DONE_BUCKET}</logmessage>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>144</xloc>
+      <yloc>272</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Log 2</name>
+      <description />
+      <type>WRITE_TO_LOG</type>
+      <attributes />
+      <logmessage>#-----------------------------------------------------------
+# INPUT
+#-----------------------------------------------------------
+FILE_INPUT_BUCKET		== ${FILE_INPUT_BUCKET}
+FILE_INPUT_DELIMITER		== ${FILE_INPUT_DELIMITER}
+
+#-----------------------------------------------------------
+# INPUT
+#-----------------------------------------------------------
+METADATA				== ${METADATA}
+
+#-----------------------------------------------------------
+# INPUT SAMPLE
+#-----------------------------------------------------------
+SAMPLE				== ${SAMPLE}
+
+#-----------------------------------------------------------
+# OUTPUT
+#-----------------------------------------------------------
+TARGET				== ${TARGET}
+SCHEMA				== ${SCHEMA_NAME}
+TABLE_NAME			== ${TABLE_NAME}
+STORAGE_BUCKET			== ${STORAGE_BUCKET}
+OUTPUT_FORMAT			== ${OUTPUT_FORMAT}
+OUTPUT_COMPRESSION		== ${OUTPUT_COMPRESSION}
+
+#-----------------------------------------------------------
+# OUTPUT STRATEGY
+#-----------------------------------------------------------
+FILE_INPUT_PARTITONED		== ${FILE_INPUT_PARTITONED}
+FILE_OUTPUT_MODE		== ${FILE_OUTPUT_MODE}
+FILE_DONE_BUCKET		== ${FILE_DONE_BUCKET}</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>LOG</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
       <yloc>272</yloc>
       <attributes_kjc />
     </entry>
@@ -1182,15 +1228,6 @@ FILE_DONE_BUCKET		== ${FILE_DONE_BUCKET}</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Get files</from>
-      <to>Extract metadata</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
       <to>Log</to>
       <from_nr>0</from_nr>
@@ -1202,6 +1239,24 @@ FILE_DONE_BUCKET		== ${FILE_DONE_BUCKET}</logmessage>
     <hop>
       <from>Log</from>
       <to>Get files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Get files</from>
+      <to>Log 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Log 2</from>
+      <to>Extract metadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
