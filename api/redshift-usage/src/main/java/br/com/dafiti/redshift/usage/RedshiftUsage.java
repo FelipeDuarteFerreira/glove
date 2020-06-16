@@ -53,18 +53,14 @@ public class RedshiftUsage {
      * @throws java.io.FileNotFoundException
      * @throws java.sql.SQLException
      */
-    public static void main(String[] args) throws 
-            DuplicateEntityException, 
-            FileNotFoundException, 
-            IOException, 
-            SQLException {
+    public static void main(String[] args) throws DuplicateEntityException, SQLException, FileNotFoundException, IOException {
         Mitt mitt = new Mitt();
-        Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "Redshift Usage - Extractor started");
+        Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "REDSHIFT USAGE - Extractor started");
 
         //Defines parameters
         mitt.getConfiguration()
                 .addParameter("c", "credentials", "Credentials file", "", true, false)
-                .addParameter("o", "output", "(Optional) Output file. Default is /tmp/hoover.csv", "/tmp/hoover.csv")
+                .addParameter("o", "output", "(Optional) Output file. Default is /tmp/redshift_usage.csv", "/tmp/redshift_usage.csv")
                 .addParameter("d", "days", "(Optional) search occurrence period. Default value is 90", "90")
                 .addParameter("e", "entity", "(Optional) entity to be searched. Default value fetchs all occurrences", "")
                 .addParameter("p", "partition", "(Optional)  Partition, divided by + if has more than one")
@@ -73,7 +69,7 @@ public class RedshiftUsage {
         CommandLineInterface cli = mitt.getCommandLineInterface(args);
 
         //Defines the output file path
-        mitt.setOutput(cli.getParameter("output"));
+        mitt.setOutputFile(cli.getParameter("output"));
 
         //Defines the output fields
         mitt.getConfiguration()
@@ -85,12 +81,12 @@ public class RedshiftUsage {
                 .addField("query")
                 .addField("entity");
 
-        Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "Redshift Usage - Connecting to database.");
+        Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "Redshift_Usage - Connecting to database.");
 
         //Connect to database
         Properties properties = new Properties();
         FileInputStream file = new FileInputStream(cli.getParameter("credentials"));
-        properties.load(file);
+        properties.load(file);        
         Connection conn = DriverManager.getConnection(properties.getProperty("url"), properties);
 
         Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "Redshift Usage - Database successfully connected.");
@@ -111,17 +107,21 @@ public class RedshiftUsage {
         query.append("TRUNC( sq.starttime ) BETWEEN ( current_date -");
         query.append(cli.getParameter("days"));
         query.append(") AND current_date ");
-
+        
         //Identifies if is necessary to search for a specific entity.
-        if (cli.getParameter("entity") != null) {
+        if (!cli.getParameter("entity").isEmpty()) {
             query.append("AND ");
             query.append("sq.querytxt LIKE '%");
             query.append(cli.getParameter("entity"));
             query.append("%' ");
         }
+        
+        query.append("limit 3;");
 
         //Execute historical Query
         ResultSet rs = conn.prepareStatement(query.toString()).executeQuery();
+        
+//        List<classe_que_representa_historico> vim_do_historico_e_tenho_nome_da_tabela = new ArrayList();
 
         while (rs.next()) {
             System.out.println(" ");
@@ -134,8 +134,87 @@ public class RedshiftUsage {
 
             String originalQuery = rs.getString("querytxt");
             String replacedQuery = originalQuery.replaceAll("[)(*:;',]", " ");
-            System.out.println("Replaced Query: " + replacedQuery);
+            System.out.println("REPLACED QUERY: " + replacedQuery);
+            
+            // tratamentos adicionais
+            
+            // no final dos tratamentos adicionais teremos algo assim:
+            // schema.tabela
+            // exemplo: 
+            // business_layer.dim_address    
+            
+//            if(){
+//                
+//            }
+            
+            
+            System.out.println(" ");
         }
+        
+//        //Build PG_Tables query.
+//        StringBuilder query_pg_tb = new StringBuilder();
+//        query_pg_tb.append("SELECT ");
+//        query_pg_tb.append("schemaname, tablename,  ( schemaname || '.' || tablename ) ");
+//        query_pg_tb.append("AS table_full_qualified_name ");
+//        query_pg_tb.append("FROM ");
+//        query_pg_tb.append("pg_catalog.pg_tables ");
+//        query_pg_tb.append("Limit 5;");
+//        
+//        //Execute Query
+//        ResultSet rs_pg = conn.prepareStatement(query_pg_tb.toString()).executeQuery();
+//        
+//        while (rs_pg.next()) {
+//            System.out.println("SCHEMA NAME: " + rs_pg.getString("schemaname"));
+//            System.out.println("TABLE NAME: " + rs_pg.getString("tablename"));
+//            System.out.println("TABLE FULL QUALIFIED NAME: " + rs_pg.getString("table_full_qualified_name"));
+//            System.out.println(" ");
+//        }
+//        
+//        //Build SVV_EXTERNAL_TABLES query.
+//        StringBuilder query_svv_tb = new StringBuilder();
+//        query_svv_tb.append("SELECT ");
+//        query_svv_tb.append("schemaname, tablename, ( schemaname || '.' || tablename ) ");
+//        query_svv_tb.append("AS table_full_qualified_name ");
+//        query_svv_tb.append("FROM ");
+//        query_svv_tb.append("SVV_EXTERNAL_TABLES ");
+//        query_svv_tb.append("Limit 5;");
+//        
+//        //Execute historical Query
+//        ResultSet rs_svv = conn.prepareStatement(query_svv_tb.toString()).executeQuery();
+//        
+//        while (rs_svv.next()) {
+//            System.out.println("SCHEMA NAME: " + rs_svv.getString("schemaname"));
+//            System.out.println("TABLE NAME: " + rs_svv.getString("tablename"));
+//            System.out.println("TABLE FULL QUALIFIED NAME: " + rs_svv.getString("table_full_qualified_name"));
+//            System.out.println(" ");
+//        }
+        
+        //Union all entre pg_catalog.pg_tables e SVV_EXTERNAL_TABLES
+        StringBuilder  union = new StringBuilder();
+        union.append("SELECT ");
+        union.append("schemaname, tablename,  ( schemaname || '.' || tablename ) ");
+        union.append("AS ");
+        union.append("table_full_qualified_name, 'pg' ");
+        union.append("FROM ");
+        union.append("pg_catalog.pg_tables ");
+        union.append("UNION ALL ");
+        union.append("SELECT ");
+        union.append("schemaname, tablename,  ( schemaname || '.' || tablename ) ");
+        union.append("AS");
+        union.append("table_full_qualified_name, 'svv'");
+        union.append("FROM ");
+        union.append("SVV_EXTERNAL_TABLES ");
+        union.append("LIMIT 10");
+        
+        ResultSet rs_union = conn.prepareStatement(union.toString()).executeQuery();
+        
+        while(rs_union.next()) {
+            System.out.println("SCHEMA NAME: " + rs_union.getString("schemaname"));
+            System.out.println("TABLE NAME: " + rs_union.getString("tablename"));
+            System.out.println("TABLE FULL QUALIFIED NAME: " + rs_union.getString("table_full_qualified_name"));
+            System.out.println(" ");
+        }
+        
 
         Logger.getLogger(RedshiftUsage.class.getName()).log(Level.INFO, "Redshift Usage - Extractor finished.");
     }
