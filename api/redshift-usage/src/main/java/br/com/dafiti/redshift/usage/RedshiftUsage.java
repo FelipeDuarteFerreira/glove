@@ -35,6 +35,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -116,7 +117,7 @@ public class RedshiftUsage {
             query.append("%' ");
         }
         
-        query.append("limit 3;");
+        query.append("limit 10;");
 
         //Execute historical Query
         ResultSet rs = conn.prepareStatement(query.toString()).executeQuery();
@@ -132,62 +133,36 @@ public class RedshiftUsage {
             System.out.println("ORIGINAL QUERYTXT: " + rs.getString("querytxt"));
             System.out.println("DATE: " + rs.getDate("date"));
 
+            //Remove trash.
             String originalQuery = rs.getString("querytxt");
             String replacedQuery = originalQuery.replaceAll("[)(*:;',]", " ");
             System.out.println("REPLACED QUERY: " + replacedQuery);
+            System.out.println(" ");
             
             // tratamentos adicionais
+            
+            //Is delta check?
+            if(replacedQuery.contains("delta_date") & replacedQuery.contains("file_date") 
+                    & "etl_dev".equals(rs.getString("usename"))){
+                    System.out.println("Is delta check - ETL process.");
+            } else if(replacedQuery.startsWith("INSERT") | replacedQuery.startsWith("DELETE") 
+                    | replacedQuery.startsWith("UPDATE") & "etl_dev".equals(rs.getString("usename"))) {
+                    System.out.println("Is an ETL process.");
+            } else {
+                System.out.println("Is not an ETL process - Split by space.");
+                String[]  splitedQuery = replacedQuery.split("\\s+");
+                //System.out.println(splitedQuery);
+                System.out.println(Arrays.toString(splitedQuery));
+            }
             
             // no final dos tratamentos adicionais teremos algo assim:
             // schema.tabela
             // exemplo: 
             // business_layer.dim_address    
             
-//            if(){
-//                
-//            }
-            
             
             System.out.println(" ");
         }
-        
-//        //Build PG_Tables query.
-//        StringBuilder query_pg_tb = new StringBuilder();
-//        query_pg_tb.append("SELECT ");
-//        query_pg_tb.append("schemaname, tablename,  ( schemaname || '.' || tablename ) ");
-//        query_pg_tb.append("AS table_full_qualified_name ");
-//        query_pg_tb.append("FROM ");
-//        query_pg_tb.append("pg_catalog.pg_tables ");
-//        query_pg_tb.append("Limit 5;");
-//        
-//        //Execute Query
-//        ResultSet rs_pg = conn.prepareStatement(query_pg_tb.toString()).executeQuery();
-//        
-//        while (rs_pg.next()) {
-//            System.out.println("SCHEMA NAME: " + rs_pg.getString("schemaname"));
-//            System.out.println("TABLE NAME: " + rs_pg.getString("tablename"));
-//            System.out.println("TABLE FULL QUALIFIED NAME: " + rs_pg.getString("table_full_qualified_name"));
-//            System.out.println(" ");
-//        }
-//        
-//        //Build SVV_EXTERNAL_TABLES query.
-//        StringBuilder query_svv_tb = new StringBuilder();
-//        query_svv_tb.append("SELECT ");
-//        query_svv_tb.append("schemaname, tablename, ( schemaname || '.' || tablename ) ");
-//        query_svv_tb.append("AS table_full_qualified_name ");
-//        query_svv_tb.append("FROM ");
-//        query_svv_tb.append("SVV_EXTERNAL_TABLES ");
-//        query_svv_tb.append("Limit 5;");
-//        
-//        //Execute historical Query
-//        ResultSet rs_svv = conn.prepareStatement(query_svv_tb.toString()).executeQuery();
-//        
-//        while (rs_svv.next()) {
-//            System.out.println("SCHEMA NAME: " + rs_svv.getString("schemaname"));
-//            System.out.println("TABLE NAME: " + rs_svv.getString("tablename"));
-//            System.out.println("TABLE FULL QUALIFIED NAME: " + rs_svv.getString("table_full_qualified_name"));
-//            System.out.println(" ");
-//        }
         
         //Union all entre pg_catalog.pg_tables e SVV_EXTERNAL_TABLES
         StringBuilder  union = new StringBuilder();
