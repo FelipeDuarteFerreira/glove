@@ -3,47 +3,47 @@ from (
    SELECT
     -1 AS ordinal_position
    ,CASE
-     WHEN ('${PARTITION_TYPE}' = 'date' OR '${PARTITION_TYPE}' = 'timestamp') AND (t.name not like '%date%' or t.name not like '%time%')
+     WHEN (lower('${PARTITION_TYPE}') = 'date' OR lower('${PARTITION_TYPE}') = 'timestamp') AND (t.name not like '%date%' or t.name not like '%time%')
      THEN
-      CASE '${PARTITION_FORMAT}' 
+      CASE upper('${PARTITION_FORMAT}')
         WHEN 'YYYY' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,4)as bigint),1900)'
    	 WHEN 'YYYYMM' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,6)as bigint),190001)'
    	 WHEN 'YYYYMMDD' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,8)as bigint),19000101)'
         WHEN 'YYYYMMDDHH' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,10)as bigint),1900010100)'
         WHEN 'YYYYMMDDHHMI' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,12)as bigint),190001010000)'
       END+' AS partition_field'
-     WHEN ('${PARTITION_TYPE}' = 'date' OR '${PARTITION_TYPE}' = 'timestamp') AND (t.name like '%date%' or t.name like '%time%')
+     WHEN (lower('${PARTITION_TYPE}') = 'date' OR lower('${PARTITION_TYPE}') = 'timestamp') AND (t.name like '%date%' or t.name like '%time%')
      THEN
-      CASE '${PARTITION_FORMAT}' 
+      CASE upper('${PARTITION_FORMAT}') 
         WHEN 'YYYY' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),4)as bigint),1900)'
    	 WHEN 'YYYYMM' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),6)as bigint),190001)'
    	 WHEN 'YYYYMMDD' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),8)as bigint),19000101)'
         WHEN 'YYYYMMDDHH' THEN 'coalesce(cast(left(str_replace(str_replace(str_replace(convert(varchar,'+'['+c.name+']'+',121),'+char(39)+'/'+char(39)+',null),'+char(39)+':'+char(39)+',null),'+char(39)+' '+char(39)+',null),10))as bigint),1900010100)'
         WHEN 'YYYYMMDDHHMI' THEN 'coalesce(cast(left(str_replace(str_replace(str_replace(convert(varchar,'+'['+c.name+']'+',121),'+char(39)+'/'+char(39)+',null),'+char(39)+':'+char(39)+',null),'+char(39)+' '+char(39)+',null),10))as bigint),1900010100)'
       END+' AS partition_field'
-     WHEN '${PARTITION_TYPE}' = 'id' 
+     WHEN lower('${PARTITION_TYPE}') = 'id' 
      THEN 'cast(((floor(coalesce(cast('+'['+c.name+']'+' as bigint),1) /  ( ${PARTITION_LENGTH} + 0.01 ) ) + 1 ) * ${PARTITION_LENGTH} ) as bigint) AS partition_field'
     END AS fields
    ,CASE
-     WHEN ('${PARTITION_TYPE}' = 'date' OR '${PARTITION_TYPE}' = 'timestamp') AND (t.name not like '%date%' or t.name not like '%time%')
+     WHEN (lower('${PARTITION_TYPE}') = 'date' OR lower('${PARTITION_TYPE}') = 'timestamp') AND (t.name not like '%date%' or t.name not like '%time%')
      THEN
-      CASE '${PARTITION_FORMAT}' 
+      CASE upper('${PARTITION_FORMAT}') 
         WHEN 'YYYY' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,4)as bigint),1900)'
    	 WHEN 'YYYYMM' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,6)as bigint),190001)'
    	 WHEN 'YYYYMMDD' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,8)as bigint),19000101)'
         WHEN 'YYYYMMDDHH' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,10)as bigint),1900010100)'
         WHEN 'YYYYMMDDHHMI' THEN 'coalesce(cast(substring(cast('+'['+c.name+']'+' as varchar),1,12)as bigint),190001010000)'
       END+' AS partition_field'
-     WHEN ('${PARTITION_TYPE}' = 'date' OR '${PARTITION_TYPE}' = 'timestamp') AND (t.name like '%date%' or t.name like '%time%')
+     WHEN (lower('${PARTITION_TYPE}') = 'date' OR lower('${PARTITION_TYPE}') = 'timestamp') AND (t.name like '%date%' or t.name like '%time%')
      THEN
-      CASE '${PARTITION_FORMAT}' 
+      CASE upper('${PARTITION_FORMAT}') 
         WHEN 'YYYY' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),4)as bigint),1900)'
    	 WHEN 'YYYYMM' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),6)as bigint),190001)'
    	 WHEN 'YYYYMMDD' THEN 'coalesce(cast(left(convert(varchar,'+'['+c.name+']'+',112),8)as bigint),19000101)'
         WHEN 'YYYYMMDDHH' THEN 'coalesce(cast(left(str_replace(str_replace(str_replace(convert(varchar,'+'['+c.name+']'+',121),'+char(39)+'/'+char(39)+',null),'+char(39)+':'+char(39)+',null),'+char(39)+' '+char(39)+',null),10))as bigint),1900010100)'
         WHEN 'YYYYMMDDHHMI' THEN 'coalesce(cast(left(str_replace(str_replace(str_replace(convert(varchar,'+'['+c.name+']'+',121),'+char(39)+'/'+char(39)+',null),'+char(39)+':'+char(39)+',null),'+char(39)+' '+char(39)+',null),10))as bigint),1900010100)'
       END+' AS partition_field'
-     WHEN '${PARTITION_TYPE}' = 'id' 
+     WHEN lower('${PARTITION_TYPE}') = 'id' 
      THEN 'cast(((floor(coalesce(cast('+'['+c.name+']'+' as bigint),1) /  ( ${PARTITION_LENGTH} + 0.01 ) ) + 1 ) * ${PARTITION_LENGTH} ) as bigint) AS partition_field'
     END AS casting
    ,'bigint' AS field_type
