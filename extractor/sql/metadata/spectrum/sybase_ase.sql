@@ -47,7 +47,7 @@ from (
      THEN 'cast(((floor(coalesce(cast('+'['+c.name+']'+' as bigint),1) /  ( ${PARTITION_LENGTH} + 0.01 ) ) + 1 ) * ${PARTITION_LENGTH} ) as bigint) AS partition_field'
     END AS casting
    ,'bigint' AS field_type
-   ,'{"name": "partition_field','type":["null", "bigint"], "default": null}' AS json
+   ,'{"name": "partition_field","type":["null", "bigint"], "default": null}' AS json
    ,'partition_field' 							 AS column_name
    ,0 											 AS column_key
    ,''                                          AS encoding
@@ -67,7 +67,7 @@ from (
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+') AS custom_primary_key' as fields
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+')' as casting
     ,'varchar(255)' AS field_type
-    ,'{"name": "custom_primary_key','type":["null", "string"], "default": null}' AS json
+    ,'{"name": "custom_primary_key","type":["null", "string"], "default": null}' AS json
     ,'custom_primary_key' AS column_name
     ,1 AS column_key
     ,'' AS encoding
@@ -145,8 +145,7 @@ from (
        WHEN t.name in ('datetime')                          then 'varchar(19)'
     ELSE t.name
     END as field_type,
-    ( '{"name": "' + lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) + '','type":' + 
-     CASE
+    ( '{"name": "' + lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) + '","type":' +      CASE
        WHEN t.name in ('bigint')                            then '["null", "long"]'
        WHEN t.name in ('int','smallint','tinyint')          then '["null", "int"]'
        WHEN t.name in ('decimal','float','numeric','real')  then '["null", "double"]'
@@ -168,13 +167,13 @@ from (
 	  UNION ALL
 
     SELECT
-        998 AS ordinal_position,
+    998 AS ordinal_position,
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS fields,
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS casting,
-        'varchar(19)' AS field_type,
-        '{"name": "etl_load_date','type":["null", "string"], "default": null}' AS json,
-        'etl_load_date' AS column_name,
-        0 AS column_key,
+    'varchar(19)' AS field_type,
+    '{"name": "etl_load_date","type":["null", "string"], "default": null}' AS json,
+    'etl_load_date' AS column_name,
+    0 AS column_key,
 		'' AS encoding
 ) x
 ORDER BY x.ordinal_position
