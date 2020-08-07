@@ -1,7 +1,7 @@
 select * 
 from (
    SELECT
-    -1 AS POSITION
+    -1 AS ORDINAL_POSITION
    ,CASE
      WHEN ('${PARTITION_TYPE}' = 'date' OR '${PARTITION_TYPE}' = 'timestamp') AND (t.name not like '%date%' or t.name not like '%time%')
      THEN
@@ -63,7 +63,7 @@ from (
    UNION ALL
 
     SELECT 
-     0 AS ordinal_position
+     0 AS ORDINAL_POSITION
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+') AS custom_primary_key' as fields
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+')' as casting
     ,'varchar(255)' AS field_type
@@ -121,7 +121,7 @@ from (
     ) as tmp
    UNION ALL
     SELECT
-    c.colid as position,
+    c.colid as ORDINAL_POSITION,
     CASE
      WHEN t.name in ('date')     THEN 'convert(varchar,'+'['+c.name+']'+',111) AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      WHEN t.name in ('datetime') THEN 'replace(convert(varchar,' +'['+c.name+']'+'121),'+char(39)+'/'+char(39)+') AS '+ case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
@@ -168,7 +168,7 @@ from (
 	  UNION ALL
 
     SELECT
-        998 AS POSITION,
+        998 AS ORDINAL_POSITION,
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS fields,
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS casting,
         'varchar(19)' AS field_type,
