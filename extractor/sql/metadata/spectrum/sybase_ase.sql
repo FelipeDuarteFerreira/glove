@@ -47,7 +47,7 @@ from (
      THEN 'cast(((floor(coalesce(cast('+'['+c.name+']'+' as bigint),1) /  ( ${PARTITION_LENGTH} + 0.01 ) ) + 1 ) * ${PARTITION_LENGTH} ) as bigint) AS partition_field'
     END AS casting
    ,'bigint' AS field_type
-   ,'{"name": "partition_field","type":["null", "bigint"], "default": null}' AS json
+   ,'{"name": "partition_field','type":["null", "bigint"], "default": null}' AS json
    ,'partition_field' 							 AS column_name
    ,0 											 AS column_key
    ,''                                          AS encoding
@@ -67,44 +67,44 @@ from (
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+') AS custom_primary_key' as fields
     ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+')' as casting
     ,'varchar(255)' AS field_type
-    ,'{"name": "custom_primary_key","type":["null", "string"], "default": null}' AS json
+    ,'{"name": "custom_primary_key','type":["null", "string"], "default": null}' AS json
     ,'custom_primary_key' AS column_name
     ,1 AS column_key
     ,'' AS encoding
     FROM
     (
      SELECT
-                 CASE WHEN index_col(o.name,i.indid,1,o.uid) is not null THEN     '['+index_col(o.name,i.indid,1,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,2,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,2,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,3,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,3,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,4,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,4,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,5,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,5,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,6,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,6,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,7,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,7,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,8,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,8,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,9,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,9,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,10,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,10,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,11,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,11,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,12,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,12,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,13,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,13,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,14,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,14,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,15,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,15,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,16,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,16,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,17,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,17,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,18,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,18,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,19,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,19,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,20,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,20,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,21,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,21,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,22,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,22,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,23,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,23,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,24,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,24,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,25,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,25,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,26,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,26,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,27,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,27,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,28,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,28,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,29,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,29,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,30,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,30,o.uid)+']' END +
-                 CASE WHEN index_col(o.name,i.indid,31,o.uid) is not null THEN ","+'['+index_col(o.name,i.indid,31,o.uid)+']' END as fields_database
+                 CASE WHEN index_col(o.name,i.indid,1,o.uid) is not null THEN  '['+index_col(o.name,i.indid,1,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,2,o.uid) is not null THEN ',['+index_col(o.name,i.indid,2,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,3,o.uid) is not null THEN ',['+index_col(o.name,i.indid,3,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,4,o.uid) is not null THEN ',['+index_col(o.name,i.indid,4,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,5,o.uid) is not null THEN ',['+index_col(o.name,i.indid,5,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,6,o.uid) is not null THEN ',['+index_col(o.name,i.indid,6,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,7,o.uid) is not null THEN ',['+index_col(o.name,i.indid,7,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,8,o.uid) is not null THEN ',['+index_col(o.name,i.indid,8,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,9,o.uid) is not null THEN ',['+index_col(o.name,i.indid,9,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,10,o.uid) is not null THEN ',['+index_col(o.name,i.indid,10,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,11,o.uid) is not null THEN ',['+index_col(o.name,i.indid,11,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,12,o.uid) is not null THEN ',['+index_col(o.name,i.indid,12,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,13,o.uid) is not null THEN ',['+index_col(o.name,i.indid,13,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,14,o.uid) is not null THEN ',['+index_col(o.name,i.indid,14,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,15,o.uid) is not null THEN ',['+index_col(o.name,i.indid,15,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,16,o.uid) is not null THEN ',['+index_col(o.name,i.indid,16,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,17,o.uid) is not null THEN ',['+index_col(o.name,i.indid,17,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,18,o.uid) is not null THEN ',['+index_col(o.name,i.indid,18,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,19,o.uid) is not null THEN ',['+index_col(o.name,i.indid,19,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,20,o.uid) is not null THEN ',['+index_col(o.name,i.indid,20,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,21,o.uid) is not null THEN ',['+index_col(o.name,i.indid,21,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,22,o.uid) is not null THEN ',['+index_col(o.name,i.indid,22,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,23,o.uid) is not null THEN ',['+index_col(o.name,i.indid,23,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,24,o.uid) is not null THEN ',['+index_col(o.name,i.indid,24,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,25,o.uid) is not null THEN ',['+index_col(o.name,i.indid,25,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,26,o.uid) is not null THEN ',['+index_col(o.name,i.indid,26,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,27,o.uid) is not null THEN ',['+index_col(o.name,i.indid,27,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,28,o.uid) is not null THEN ',['+index_col(o.name,i.indid,28,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,29,o.uid) is not null THEN ',['+index_col(o.name,i.indid,29,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,30,o.uid) is not null THEN ',['+index_col(o.name,i.indid,30,o.uid)+']' END +
+                 CASE WHEN index_col(o.name,i.indid,31,o.uid) is not null THEN ',['+index_col(o.name,i.indid,31,o.uid)+']' END as fields_database
     ,null as fields_custom
     FROM
           sysobjects o
@@ -145,7 +145,7 @@ from (
        WHEN t.name in ('datetime')                          then 'varchar(19)'
     ELSE t.name
     END as field_type,
-    ( '{"name": "' + lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) + '","type":' + 
+    ( '{"name": "' + lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) + '','type":' + 
      CASE
        WHEN t.name in ('bigint')                            then '["null", "long"]'
        WHEN t.name in ('int','smallint','tinyint')          then '["null", "int"]'
@@ -172,7 +172,7 @@ from (
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS fields,
 		'str_replace(convert(varchar,current_bigdatetime(),23),'+char(39)+'T'+char(39)+','+char(39)+' '+char(39)+') as etl_load_date' AS casting,
         'varchar(19)' AS field_type,
-        '{"name": "etl_load_date","type":["null", "string"], "default": null}' AS json,
+        '{"name": "etl_load_date','type":["null", "string"], "default": null}' AS json,
         'etl_load_date' AS column_name,
         0 AS column_key,
 		'' AS encoding
