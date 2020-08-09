@@ -64,8 +64,8 @@ from (
 
     SELECT 
      0 AS ordinal_position
-    ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+') AS custom_primary_key' as fields
-    ,'hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+')' as casting
+    ,'hash(hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+'),'+char(39)+'md5'+char(39)+') AS custom_primary_key' as fields
+    ,'hash(hashbytes('+char(39)+'md5'+char(39)+','+coalesce(max(tmp.fields_custom),max(tmp.fields_database))+'),'+char(39)+'md5'+char(39)+')' as casting
     ,'varchar(255)' AS field_type
     ,'{"name": "custom_primary_key","type":["null", "string"], "default": null}' AS json
     ,'custom_primary_key' AS column_name
@@ -126,21 +126,22 @@ from (
      WHEN t.name in ('date')     THEN 'convert(varchar,'+'['+c.name+']'+',111) AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      WHEN t.name in ('datetime') THEN 'replace(convert(varchar,' +'['+c.name+']'+'121),'+char(39)+'/'+char(39)+') AS '+ case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      WHEN t.name in ('varchar','char','nvarchar','nchar','text') then '['+c.name+']' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
-     WHEN t.name in ('varbinary','image','binary') then 'cast(['+c.name+'] as float)' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
+     WHEN t.name in ('varbinary','image','binary') then '['+c.name+']' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      ELSE '['+c.name+']' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
     END AS fields,
     CASE
      WHEN t.name in ('date')     THEN 'convert(varchar,'+'['+c.name+']'+',111)'
      WHEN t.name in ('datetime') THEN 'replace(convert(varchar,' +'['+c.name+']'+'121),'+char(39)+'/'+char(39)+')'
      WHEN t.name in ('varchar','char','nvarchar','nchar','text') then '[' + c.name + ']' 
-     WHEN t.name in ('varbinary','image','binary') then 'cast([' + c.name + '] as float)' 
+     WHEN t.name in ('varbinary','image','binary') then '[' + c.name + ']' 
      ELSE '['+c.name+']'
     END AS casting,
     CASE 
        WHEN t.name in ('bigint')                            then 'bigint'
        WHEN t.name in ('int','smallint','tinyint')          then 'int'
-       WHEN t.name in ('decimal','float','numeric','real','varbinary','binary')  then CASE '${IS_SPECTRUM}' WHEN '1' THEN CASE '${HAS_ATHENA}' WHEN '1' THEN 'double' ELSE 'double precision' END ELSE 'double precision' END
+       WHEN t.name in ('decimal','float','numeric','real')  then CASE '${IS_SPECTRUM}' WHEN '1' THEN CASE '${HAS_ATHENA}' WHEN '1' THEN 'double' ELSE 'double precision' END ELSE 'double precision' END
        WHEN t.name in ('image','varchar','char','nvarchar','nchar')then 'varchar('+cast(cast((c.length*0.3)+c.length as bigint) as varchar)+')'
+       WHEN t.name in ('varbinary','binary')                then 'varchar(32)'
        WHEN t.name in ('text')                              then 'varchar(65535)'
        WHEN t.name in ('date')                              then 'varchar(10)'   
        WHEN t.name in ('time')                              then 'varchar(19)'
@@ -150,8 +151,8 @@ from (
     ( '{"name": "' + lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) + '","type":' +      CASE
        WHEN t.name in ('bigint')                            then '["null", "long"]'
        WHEN t.name in ('int','smallint','tinyint')          then '["null", "int"]'
-       WHEN t.name in ('decimal','float','numeric','real','varbinary','binary')  then '["null", "double"]'
-       WHEN t.name in ('image','varchar','char','nvarchar','nchar','text','date','time','datetime')then '["null", "string"]'
+       WHEN t.name in ('decimal','float','numeric','real')  then '["null", "double"]'
+       WHEN t.name in ('varbinary','binary','image','varchar','char','nvarchar','nchar','text','date','time','datetime')then '["null", "string"]'
        WHEN t.name in ('bit')                               then '["null", "boolean"]'
      END+ ', "default": null}' ) AS json,
      lower(case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end) AS column_name,
