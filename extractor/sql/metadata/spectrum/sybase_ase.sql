@@ -47,7 +47,7 @@ from (
      THEN 'cast(((floor(coalesce(cast('+'['+c.name+']'+' as bigint),1) /  ( ${PARTITION_LENGTH} + 0.01 ) ) + 1 ) * ${PARTITION_LENGTH} ) as bigint) AS partition_field'
     END AS casting
    ,'bigint' AS field_type
-   ,'{"name": "partition_field","type":["null", "bigint"], "default": null}' AS json
+   ,'{"name": "partition_field","type":["null", "long"], "default": null}' AS json
    ,'partition_field' 							 AS column_name
    ,0 											 AS column_key
    ,''                                          AS encoding
