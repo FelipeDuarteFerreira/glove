@@ -600,6 +600,16 @@
           <stream_name/>
           <value>${DELTA_FIELD_TYPE}</value>
         </parameter>
+        <parameter>
+          <name>INPUT_TABLE_SCHEMA</name>
+          <stream_name/>
+          <value>${INPUT_TABLE_SCHEMA}</value>
+        </parameter>
+        <parameter>
+          <name>INPUT_TABLE_NAME</name>
+          <stream_name/>
+          <value>${INPUT_TABLE_NAME}</value>
+        </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
