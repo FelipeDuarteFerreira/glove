@@ -821,7 +821,7 @@
     </partitioning>
     <formula>
       <field_name>INPUT_TABLE_NAME_tmp</field_name>
-      <formula_string>IF( UPPER( [DATABASE_TYPE] ) = "SAP_HANA";  """" &amp; UPPER( [INPUT_TABLE_NAME] ) &amp; """" ; IF(UPPER( [DATABASE_TYPE] ) = "SYBASE_ASE";"[" &amp; UPPER( [INPUT_TABLE_NAME] ) &amp; "]" ;;[INPUT_TABLE_NAME]  );[INPUT_TABLE_NAME]  ) 
+      <formula_string>IF( UPPER( [DATABASE_TYPE] ) = "SAP_HANA";  """" &amp; UPPER( [INPUT_TABLE_NAME] ) &amp; """" ; IF(UPPER( [DATABASE_TYPE] ) = "SYBASE_ASE";"[" &amp; UPPER( [INPUT_TABLE_NAME] ) &amp; "]" ;[INPUT_TABLE_NAME]  );[INPUT_TABLE_NAME]  ) 
 </formula_string>
       <value_type>String</value_type>
       <value_length>-1</value_length>
@@ -830,7 +830,7 @@
     </formula>
     <formula>
       <field_name>INPUT_TABLE_SCHEMA_tmp</field_name>
-      <formula_string>IF( UPPER( [DATABASE_TYPE] ) = "SAP_HANA";  """" &amp; UPPER( [INPUT_TABLE_SCHEMA] ) &amp; """" ; IF(UPPER( [DATABASE_TYPE] ) = "SYBASE_ASE";"[" &amp; UPPER( [INPUT_TABLE_SCHEMA] ) &amp; "]" ;;[INPUT_TABLE_SCHEMA]  );[INPUT_TABLE_SCHEMA]  ) </formula_string>
+      <formula_string>IF( UPPER( [DATABASE_TYPE] ) = "SAP_HANA";  """" &amp; UPPER( [INPUT_TABLE_SCHEMA] ) &amp; """" ; IF(UPPER( [DATABASE_TYPE] ) = "SYBASE_ASE";"[" &amp; UPPER( [INPUT_TABLE_SCHEMA] ) &amp; "]" ;[INPUT_TABLE_SCHEMA]  );[INPUT_TABLE_SCHEMA]  ) </formula_string>
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
