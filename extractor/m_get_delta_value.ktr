@@ -510,7 +510,7 @@
     </partitioning>
     <formula>
       <field_name>sql_condition</field_name>
-      <formula_string>IF(AND([DATABASE_TYPE]="SYBASE_ASE";OR(UPPER([DELTA_FIELD_TYPE]) = "INT";UPPER([DELTA_FIELD_TYPE])="BIGINT";UPPER([DELTA_FIELD_TYPE])="DOUBLE";UPPER([DELTA_FIELD_TYPE])="DOUBLE PRECISION"));[DELTA_FIELD] &amp; ">=" &amp; [delta_value] ;[DELTA_FIELD] &amp; " >= " &amp; "'"&amp;[delta_value]&amp;"'")</formula_string>
+      <formula_string>IF(AND([DATABASE_TYPE]="SYBASE_ASE";OR(UPPER([DELTA_FIELD_TYPE]) = "INT";UPPER([DELTA_FIELD_TYPE])="BIGINT";UPPER([DELTA_FIELD_TYPE])="DOUBLE";UPPER([DELTA_FIELD_TYPE])="DOUBLE PRECISION"));[DELTA_FIELD] &amp; " >= " &amp; "cast('"&amp;[delta_value]&amp;"' as bigint)" ;[DELTA_FIELD] &amp; " >= " &amp; "'"&amp;[delta_value]&amp;"'")</formula_string>
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
