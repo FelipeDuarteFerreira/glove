@@ -10,6 +10,21 @@
     <directory>/</directory>
     <parameters>
       <parameter>
+        <name>DATABASE_TYPE</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>DELTA_FIELD</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>DELTA_FIELD_TYPE</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
         <name>METADATA_DELTA_FILE</name>
         <default_value/>
         <description/>
