@@ -126,14 +126,14 @@ from (
      WHEN t.name in ('date')     THEN 'convert(varchar,'+'['+c.name+']'+',111) AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      WHEN t.name in ('datetime') THEN 'replace(convert(varchar,' +'['+c.name+']'+'121),'+char(39)+'/'+char(39)+') AS '+ case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      WHEN t.name in ('varchar','char','nvarchar','nchar','text') then '['+c.name+']' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
-     WHEN t.name in ('varbinary','binary') then 'hash(cast(['+c.name+'] as float),'+char(39)+'md5'+char(39) + ') AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
+     WHEN t.name in ('varbinary','binary') then 'hash(['+c.name+'],'+char(39)+'md5'+char(39) + ') AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
      ELSE '['+c.name+']' + ' AS ' + case when c.name like '%/%' then right(str_replace(c.name,'/','_'),len(c.name)-1)else c.name end
     END AS fields,
     CASE
      WHEN t.name in ('date')     THEN 'convert(varchar,'+'['+c.name+']'+',111)'
      WHEN t.name in ('datetime') THEN 'replace(convert(varchar,' +'['+c.name+']'+'121),'+char(39)+'/'+char(39)+')'
      WHEN t.name in ('varchar','char','nvarchar','nchar','text') then '[' + c.name + ']' 
-     WHEN t.name in ('varbinary','binary') then 'hash(cast(['+c.name+'] as float),'+char(39)+'md5'+char(39) + ')' 
+     WHEN t.name in ('varbinary','binary') then 'hash(['+c.name+'],'+char(39)+'md5'+char(39) + ')' 
      ELSE '['+c.name+']'
     END AS casting,
     CASE 
