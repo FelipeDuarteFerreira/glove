@@ -585,6 +585,21 @@
           <stream_name/>
           <value>${METADATA_DELTA_FILE}</value>
         </parameter>
+        <parameter>
+          <name>DATABASE_TYPE</name>
+          <stream_name/>
+          <value>${DATABASE_TYPE}</value>
+        </parameter>
+        <parameter>
+          <name>DELTA_FIELD</name>
+          <stream_name/>
+          <value>${DELTA_FIELD}</value>
+        </parameter>
+        <parameter>
+          <name>DELTA_FIELD_TYPE</name>
+          <stream_name/>
+          <value>${DELTA_FIELD_TYPE}</value>
+        </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
