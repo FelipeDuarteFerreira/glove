@@ -2,9 +2,9 @@
 <transformation>
   <info>
     <name>m_fix_database_info</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
     <directory>/</directory>
@@ -12,12 +12,12 @@
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -42,37 +42,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -126,11 +126,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -208,10 +208,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -274,10 +274,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -350,10 +350,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -402,9 +402,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -415,7 +415,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -461,72 +461,78 @@
   <step>
     <name>Clean</name>
     <type>ReplaceString</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <in_stream_name>OUTPUT_TABLE_SCHEMA_tmp</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <use_regex>yes</use_regex>
-        <replace_string>\/\w{3}\/</replace_string>
-        <replace_by_string/>
+        <replace_string>\/\w{1,}\/</replace_string>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
         <in_stream_name>OUTPUT_TABLE_NAME_tmp</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <use_regex>yes</use_regex>
-        <replace_string>\/\w{3}\/</replace_string>
-        <replace_by_string/>
+        <replace_string>\/\w{1,}\/</replace_string>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_SCHEMA</in_stream_name>
         <out_stream_name>INPUT_TABLE_SCHEMA_formated</out_stream_name>
         <use_regex>yes</use_regex>
-        <replace_string>\/\w{3}\/</replace_string>
-        <replace_by_string/>
+        <replace_string>\/\w{1,}\/</replace_string>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_NAME</in_stream_name>
         <out_stream_name>INPUT_TABLE_NAME_formated</out_stream_name>
         <use_regex>yes</use_regex>
-        <replace_string>\/\w{3}\/</replace_string>
-        <replace_by_string/>
+        <replace_string>\/\w{1,}\/</replace_string>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
         <in_stream_name>DELTA_FIELD</in_stream_name>
         <out_stream_name>DELTA_FIELD_IN_METADATA</out_stream_name>
         <use_regex>yes</use_regex>
-        <replace_string>\/\w{3}\/</replace_string>
-        <replace_by_string/>
+        <replace_string>\/\w{1,}\/</replace_string>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
     </fields>
-    <cluster_schema/>
+    <attributes />
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -542,23 +548,23 @@
   <step>
     <name>Get database parameters</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>INPUT_TABLE_NAME</name>
         <variable>${INPUT_TABLE_NAME}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -567,10 +573,10 @@
         <name>INPUT_TABLE_SCHEMA</name>
         <variable>${INPUT_TABLE_SCHEMA}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -579,10 +585,10 @@
         <name>OUTPUT_TABLE_NAME</name>
         <variable>${OUTPUT_TABLE_NAME}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -591,10 +597,10 @@
         <name>OUTPUT_TABLE_SCHEMA</name>
         <variable>${OUTPUT_TABLE_SCHEMA}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -603,10 +609,10 @@
         <name>DATABASE_TYPE</name>
         <variable>${DATABASE_TYPE}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -615,10 +621,10 @@
         <name>PARTITION_FIELD</name>
         <variable>${PARTITION_FIELD}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -627,16 +633,17 @@
         <name>DELTA_FIELD</name>
         <variable>${DELTA_FIELD}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <attributes />
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -652,23 +659,23 @@
   <step>
     <name>Lower</name>
     <type>StringOperations</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <in_stream_name>OUTPUT_TABLE_SCHEMA_tmp</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
+        <pad_char />
+        <pad_len />
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -676,12 +683,12 @@
       </field>
       <field>
         <in_stream_name>OUTPUT_TABLE_NAME_tmp</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
+        <pad_char />
+        <pad_len />
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -689,12 +696,12 @@
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_SCHEMA_formated</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
+        <pad_char />
+        <pad_len />
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -702,19 +709,20 @@
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_NAME_formated</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
+        <pad_char />
+        <pad_len />
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema/>
+    <attributes />
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -730,72 +738,73 @@
   <step>
     <name>Set database parameters</name>
     <type>SetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <field_name>INPUT_TABLE_SCHEMA_tmp</field_name>
         <variable_name>INPUT_TABLE_SCHEMA</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>INPUT_TABLE_NAME_tmp</field_name>
         <variable_name>INPUT_TABLE_NAME</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>PARTITION_FIELD_tmp</field_name>
         <variable_name>PARTITION_FIELD</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>DELTA_FIELD_tmp</field_name>
         <variable_name>DELTA_FIELD</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>OUTPUT_TABLE_SCHEMA_tmp</field_name>
         <variable_name>OUTPUT_TABLE_SCHEMA</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>OUTPUT_TABLE_NAME_tmp</field_name>
         <variable_name>OUTPUT_TABLE_NAME</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>INPUT_TABLE_SCHEMA_formated</field_name>
         <variable_name>INPUT_TABLE_SCHEMA_IN_METADATA</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>INPUT_TABLE_NAME_formated</field_name>
         <variable_name>INPUT_TABLE_NAME_IN_METADATA</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
       <field>
         <field_name>DELTA_FIELD_IN_METADATA</field_name>
         <variable_name>DELTA_FIELD_IN_METADATA</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
+        <default_value />
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema/>
+    <attributes />
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -811,13 +820,13 @@
   <step>
     <name>Transform</name>
     <type>Formula</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <formula>
       <field_name>INPUT_TABLE_NAME_tmp</field_name>
@@ -826,7 +835,7 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
     <formula>
       <field_name>INPUT_TABLE_SCHEMA_tmp</field_name>
@@ -834,7 +843,7 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
     <formula>
       <field_name>PARTITION_FIELD_tmp</field_name>
@@ -842,7 +851,7 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
     <formula>
       <field_name>DELTA_FIELD_tmp</field_name>
@@ -850,7 +859,7 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
     <formula>
       <field_name>OUTPUT_TABLE_NAME_tmp</field_name>
@@ -858,7 +867,7 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
     <formula>
       <field_name>OUTPUT_TABLE_SCHEMA_tmp</field_name>
@@ -866,9 +875,10 @@
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field/>
+      <replace_field />
     </formula>
-    <cluster_schema/>
+    <attributes />
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -886,4 +896,5 @@
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
+  <attributes />
 </transformation>
