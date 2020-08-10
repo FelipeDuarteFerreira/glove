@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>j_database_module</name>
-  <description />
-  <extended_description />
-  <job_version />
+  <description/>
+  <extended_description/>
+  <job_version/>
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
@@ -15,12 +15,12 @@
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection />
-    <schema />
-    <table />
-    <size_limit_lines />
-    <interval />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <size_limit_lines/>
+    <interval/>
+    <timeout_days/>
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -128,10 +128,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -219,10 +219,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -285,30 +285,29 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file />
+  <shared_objects_file/>
   <entries>
     <entry>
       <name>Get metadata</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_get_table_metadata.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -319,112 +318,112 @@
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>CONNECTION_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${CONNECTION_NAME}</value>
         </parameter>
         <parameter>
           <name>RAW_SRC_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${RAW_SRC_NAME}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_NAME}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_SCHEMA</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_SCHEMA}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_NAME_UNIX</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_NAME_UNIX}</value>
         </parameter>
         <parameter>
           <name>INPUT_METADATA_STATEMENT</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_METADATA_STATEMENT}</value>
         </parameter>
         <parameter>
           <name>PARTITION_FIELD</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_FIELD}</value>
         </parameter>
         <parameter>
           <name>TIMEZONE_OFFSET</name>
-          <stream_name />
+          <stream_name/>
           <value>${TIMEZONE_OFFSET}</value>
         </parameter>
         <parameter>
           <name>PARTITION_LENGTH</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_LENGTH}</value>
         </parameter>
         <parameter>
           <name>PARTITION_FORMAT</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_FORMAT}</value>
         </parameter>
         <parameter>
           <name>PARTITION_TYPE</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_TYPE}</value>
         </parameter>
         <parameter>
           <name>SCHEMA_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${SCHEMA_NAME}</value>
         </parameter>
         <parameter>
           <name>TABLE_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${TABLE_NAME}</value>
         </parameter>
         <parameter>
           <name>RAWFILE_QUEUE_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${RAWFILE_QUEUE_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_DELTA_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_DELTA_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_PATH</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_PATH}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_JSON_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_JSON_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_PATH</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_PATH}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_COLUMNS_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_COLUMNS_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_FIELDS_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_FIELDS_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_FIELDS_AND_TYPE_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_FIELDS_AND_TYPE_FILE}</value>
         </parameter>
         <parameter>
           <name>DELTA_FIELD_IN_METADATA</name>
-          <stream_name />
+          <stream_name/>
           <value>${DELTA_FIELD_IN_METADATA}</value>
         </parameter>
       </parameters>
@@ -433,41 +432,39 @@
       <nr>0</nr>
       <xloc>304</xloc>
       <yloc>496</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get connection properties</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_get_connection_properties.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>CONNECTION_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${CONNECTION_NAME}</value>
         </parameter>
       </parameters>
@@ -476,13 +473,11 @@
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>160</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>START</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
-      <attributes />
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -498,59 +493,55 @@
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>48</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Metadata exists?</name>
-      <description />
+      <description/>
       <type>FILE_EXISTS</type>
-      <attributes />
       <filename>${METADATA_COLUMNS_FILE}</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>416</xloc>
       <yloc>496</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Metadata compare</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_metadata_compare.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>METADATA_COLUMNS_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_COLUMNS_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_QUEUE_COLUMNS_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_QUEUE_COLUMNS_FILE}</value>
         </parameter>
       </parameters>
@@ -559,41 +550,39 @@
       <nr>0</nr>
       <xloc>416</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get delta value</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_get_delta_value.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>METADATA_DELTA_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_DELTA_FILE}</value>
         </parameter>
       </parameters>
@@ -602,15 +591,13 @@
       <nr>0</nr>
       <xloc>1424</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recreate</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>N</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
@@ -624,15 +611,13 @@
       <nr>0</nr>
       <xloc>416</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Do not recreate</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>N</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
@@ -646,21 +631,19 @@
       <nr>0</nr>
       <xloc>752</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Allow recreate?</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${ALLOW_RECREATE}</variablename>
       <fieldtype>number</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -670,21 +653,19 @@
       <nr>0</nr>
       <xloc>528</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Has where condition?</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${WHERE_CONDITION_TO_DELTA}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
-      <comparevalue />
-      <minvalue />
-      <maxvalue />
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -694,21 +675,19 @@
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Has delta field?</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${DELTA_FIELD}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
-      <comparevalue />
-      <minvalue />
-      <maxvalue />
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -718,49 +697,46 @@
       <nr>0</nr>
       <xloc>976</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Extract data</name>
-      <description />
+      <description/>
       <type>JOB</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <job_object_id />
+      <job_object_id/>
       <filename>${Internal.Job.Filename.Directory}/j_extract_data_from_database.kjb</filename>
-      <jobname />
-      <directory />
+      <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>Y</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>WHERE_CONDITION_TO_DELTA</name>
           <stream_name>sql_condition</stream_name>
-          <value />
+          <value/>
         </parameter>
         <parameter>
           <name>WHERE_CONDITION_TO_RECOVER</name>
           <stream_name>sql_recovery_condition</stream_name>
-          <value />
+          <value/>
         </parameter>
         <parameter>
           <name>HAS_RECOVERY</name>
-          <stream_name />
+          <stream_name/>
           <value>${HAS_RECOVERY}</value>
         </parameter>
       </parameters>
@@ -770,48 +746,44 @@
       <nr>0</nr>
       <xloc>1536</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Success</name>
-      <description />
+      <description/>
       <type>SUCCESS</type>
-      <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1648</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Full extraction parameters</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_set_full_extraction_parameters.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -820,47 +792,41 @@
       <nr>0</nr>
       <xloc>1536</xloc>
       <yloc>720</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Fail extracting data</name>
-      <description />
+      <description/>
       <type>ABORT</type>
-      <attributes />
-      <message />
+      <message/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1536</xloc>
       <yloc>160</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Delta file exists?</name>
-      <description />
+      <description/>
       <type>FILE_EXISTS</type>
-      <attributes />
       <filename>${METADATA_DELTA_FILE}</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1088</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recreate?</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${IS_RECREATE}</variablename>
       <fieldtype>number</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -870,21 +836,19 @@
       <nr>0</nr>
       <xloc>528</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Update metadata</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <attributes />
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
@@ -898,15 +862,13 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>528</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Module parameters</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>ROOT_JOB</file_variable_type>
       <fields>
         <field>
@@ -1020,21 +982,19 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>496</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recreate? </name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${IS_RECREATE}</variablename>
       <fieldtype>number</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>equal</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -1044,30 +1004,28 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>416</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Create partition</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_create_partition.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1078,62 +1036,62 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>DATABASE_TYPE</name>
-          <stream_name />
+          <stream_name/>
           <value>${DATABASE_TYPE}</value>
         </parameter>
         <parameter>
           <name>PARTITION_FIELD</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_FIELD}</value>
         </parameter>
         <parameter>
           <name>PARTITION_TYPE</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_TYPE}</value>
         </parameter>
         <parameter>
           <name>PARTITION_LENGTH</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_LENGTH}</value>
         </parameter>
         <parameter>
           <name>PARTITION_FORMAT</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_FORMAT}</value>
         </parameter>
         <parameter>
           <name>PARTITION_HAS_PREFIX</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_HAS_PREFIX}</value>
         </parameter>
         <parameter>
           <name>PARTITION_FIELD_CASTING</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_FIELD_CASTING}</value>
         </parameter>
         <parameter>
           <name>PARTITION_MINIMUN</name>
-          <stream_name />
+          <stream_name/>
           <value>${PARTITION_MINIMUN}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_SCHEMA</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_SCHEMA}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_NAME}</value>
         </parameter>
         <parameter>
           <name>WHERE_CONDITION_TO_RECOVER</name>
-          <stream_name />
+          <stream_name/>
           <value>${WHERE_CONDITION_TO_RECOVER}</value>
         </parameter>
         <parameter>
           <name>INPUT_PARTITION_STATEMENT</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_PARTITION_STATEMENT}</value>
         </parameter>
       </parameters>
@@ -1142,21 +1100,19 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1200</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Has partition field? </name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${PARTITION_FIELD}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
-      <comparevalue />
-      <minvalue />
-      <maxvalue />
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -1166,54 +1122,50 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>976</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recovery file exists?</name>
-      <description />
+      <description/>
       <type>FILE_EXISTS</type>
-      <attributes />
       <filename>${METADATA_RECOVERY_FILE}</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1200</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get recovery value</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_get_recovery_value.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>METADATA_DELTA_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_DELTA_FILE}</value>
         </parameter>
       </parameters>
@@ -1222,15 +1174,13 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1200</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recovery</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -1244,15 +1194,13 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1312</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Do not recovery</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -1266,15 +1214,13 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1088</xloc>
       <yloc>720</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recovery </name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -1288,30 +1234,28 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1312</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get original metadata</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_get_original_fields.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1322,17 +1266,17 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>METADATA_FIELDS_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_FIELDS_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_FIELDS_NAME_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_FIELDS_NAME_FILE}</value>
         </parameter>
         <parameter>
           <name>METADATA_FIELDS_AND_TYPE_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_FIELDS_AND_TYPE_FILE}</value>
         </parameter>
       </parameters>
@@ -1341,46 +1285,44 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>640</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Define filter condition</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Job.Filename.Directory}/m_custom_extraction_parameters.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>WHERE_CONDITION_TO_DELTA</name>
-          <stream_name />
+          <stream_name/>
           <value>${WHERE_CONDITION_TO_DELTA}</value>
         </parameter>
         <parameter>
           <name>WHERE_CONDITION_TO_RECOVER</name>
-          <stream_name />
+          <stream_name/>
           <value>${WHERE_CONDITION_TO_RECOVER}</value>
         </parameter>
       </parameters>
@@ -1389,15 +1331,13 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>144</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Do not recovery </name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>Y</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -1411,41 +1351,39 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1312</xloc>
       <yloc>144</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get connection</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/m_get_connection.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>DATABASE_TYPE</name>
-          <stream_name />
+          <stream_name/>
           <value>${DATABASE_TYPE}</value>
         </parameter>
       </parameters>
@@ -1454,30 +1392,28 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>272</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Fix database attributes</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/m_fix_database_info.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -1492,21 +1428,19 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Has delta field? </name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${DELTA_FIELD}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
-      <comparevalue />
-      <minvalue />
-      <maxvalue />
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -1516,41 +1450,39 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1424</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get SQL</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/m_get_sql.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>DATABASE_TYPE</name>
-          <stream_name />
+          <stream_name/>
           <value>${DATABASE_TYPE}</value>
         </parameter>
       </parameters>
@@ -1559,96 +1491,94 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>496</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Get max delta value</name>
-      <description />
+      <description/>
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
-      <trans_object_id />
+      <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/m_get_max_delta_value.ktr</filename>
-      <transname />
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>INPUT_TABLE_SCHEMA</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_SCHEMA}</value>
         </parameter>
         <parameter>
           <name>INPUT_TABLE_NAME</name>
-          <stream_name />
+          <stream_name/>
           <value>${INPUT_TABLE_NAME}</value>
         </parameter>
         <parameter>
           <name>DELTA_FIELD</name>
-          <stream_name />
+          <stream_name/>
           <value>${DELTA_FIELD}</value>
         </parameter>
         <parameter>
           <name>DELTA_FIELD_CASTING</name>
-          <stream_name />
+          <stream_name/>
           <value>${DELTA_FIELD_CASTING}</value>
         </parameter>
         <parameter>
           <name>JDBC_URL</name>
-          <stream_name />
+          <stream_name/>
           <value>${JDBC_URL}</value>
         </parameter>
         <parameter>
           <name>JDBC_DRIVER_CLASS</name>
-          <stream_name />
+          <stream_name/>
           <value>${JDBC_DRIVER_CLASS}</value>
         </parameter>
         <parameter>
           <name>DB_HOST</name>
-          <stream_name />
+          <stream_name/>
           <value>${DB_HOST}</value>
         </parameter>
         <parameter>
           <name>DB_DATABASE</name>
-          <stream_name />
+          <stream_name/>
           <value>${DB_DATABASE}</value>
         </parameter>
         <parameter>
           <name>DB_PORT</name>
-          <stream_name />
+          <stream_name/>
           <value>${DB_PORT}</value>
         </parameter>
         <parameter>
           <name>DB_USER</name>
-          <stream_name />
+          <stream_name/>
           <value>${DB_USER}</value>
         </parameter>
         <parameter>
           <name>DB_PASSWORD</name>
-          <stream_name />
+          <stream_name/>
           <value>${DB_PASSWORD}</value>
         </parameter>
         <parameter>
           <name>METADATA_DELTA_FILE</name>
-          <stream_name />
+          <stream_name/>
           <value>${METADATA_DELTA_FILE}</value>
         </parameter>
       </parameters>
@@ -1657,21 +1587,19 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1424</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Eager partition?</name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${PARTITION_EAGER}</variablename>
       <fieldtype>number</fieldtype>
-      <mask />
+      <mask/>
       <comparevalue>1</comparevalue>
-      <minvalue />
-      <maxvalue />
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -1681,21 +1609,19 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>1088</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Has where condition? </name>
-      <description />
+      <description/>
       <type>SIMPLE_EVAL</type>
-      <attributes />
       <valuetype>variable</valuetype>
-      <fieldname />
+      <fieldname/>
       <variablename>${WHERE_CONDITION_TO_DELTA}</variablename>
       <fieldtype>string</fieldtype>
-      <mask />
-      <comparevalue />
-      <minvalue />
-      <maxvalue />
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
       <successcondition>different</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
@@ -1705,13 +1631,11 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>608</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Hub</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
-      <attributes />
       <start>N</start>
       <dummy>Y</dummy>
       <repeat>N</repeat>
@@ -1727,20 +1651,17 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
     <entry>
       <name>Recovery file exists? </name>
-      <description />
+      <description/>
       <type>FILE_EXISTS</type>
-      <attributes />
       <filename>${METADATA_RECOVERY_FILE}</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>976</xloc>
       <yloc>384</yloc>
-      <attributes_kjc />
     </entry>
   </entries>
   <hops>

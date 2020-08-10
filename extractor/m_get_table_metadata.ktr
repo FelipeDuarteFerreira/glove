@@ -2,102 +2,102 @@
 <transformation>
   <info>
     <name>m_get_table_metadata</name>
-    <description />
-    <extended_description />
-    <trans_version />
+    <description/>
+    <extended_description/>
+    <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
       <parameter>
         <name>CUSTOM_PRIMARY_KEY</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>DELTA_FIELD_IN_METADATA</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>INPUT_METADATA_STATEMENT</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>INPUT_TABLE_NAME</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>INPUT_TABLE_NAME_UNIX</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>INPUT_TABLE_SCHEMA</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>IS_CASE_SENSITIVE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>METADATA_QUEUE_COLUMNS_FILE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>METADATA_QUEUE_FIELDS_AND_TYPE_FILE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>METADATA_QUEUE_FIELDS_FILE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>METADATA_QUEUE_JSON_FILE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>PARTITION_FIELD</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>PARTITION_FORMAT</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>PARTITION_LENGTH</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>PARTITION_TYPE</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
       <parameter>
         <name>TIMEZONE_OFFSET</name>
-        <default_value />
-        <description />
+        <default_value/>
+        <description/>
       </parameter>
     </parameters>
     <log>
       <trans-log-table>
-        <connection />
-        <schema />
-        <table />
-        <size_limit_lines />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -122,37 +122,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>ERRORS</id>
@@ -206,11 +206,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection />
-        <schema />
-        <table />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -288,10 +288,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -354,10 +354,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -430,10 +430,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -482,9 +482,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection />
-      <table />
-      <field />
+      <connection/>
+      <table/>
+      <field/>
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -495,7 +495,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file />
+    <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -518,16 +518,16 @@
   </notepads>
   <connection>
     <name>GENERIC_JDBC_CONNECTION</name>
-    <server />
+    <server/>
     <type>GENERIC</type>
     <access>Native</access>
-    <database />
+    <database/>
     <port>1521</port>
     <username>${DB_USER}</username>
     <password>${DB_PASSWORD}</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
       <attribute>
         <code>CUSTOM_DRIVER_CLASS</code>
@@ -764,13 +764,13 @@
   <step>
     <name>Checks the black list</name>
     <type>StreamLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <from>Filters the black list</from>
     <input_sorted>N</input_sorted>
@@ -785,11 +785,11 @@
       <value>
         <name>src_column_name</name>
         <rename>check_blacklist</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -805,28 +805,28 @@
   <step>
     <name>Column name normalizer</name>
     <type>ReplaceString</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>column_name_lower</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string>-</replace_string>
         <replace_by_string>_</replace_by_string>
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string />
+        <replace_field_by_string/>
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -842,26 +842,26 @@
   <step>
     <name>Concat name and type</name>
     <type>ConcatFields</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <separator> </separator>
-    <enclosure />
+    <enclosure/>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding />
-    <endedLine />
+    <encoding/>
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>file</name>
@@ -875,7 +875,7 @@
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -885,11 +885,11 @@
       <field>
         <name>column_name_lower</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -897,11 +897,11 @@
       <field>
         <name>field_type</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -909,11 +909,11 @@
       <field>
         <name>encoding</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -924,7 +924,7 @@
       <targetFieldLength>0</targetFieldLength>
       <removeSelectedFields>N</removeSelectedFields>
     </ConcatFields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -940,23 +940,23 @@
   <step>
     <name>Connection to lower case</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>CONNECTION_NAME_PARAMETER</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -964,12 +964,12 @@
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_NAME_PARAMETER</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -977,19 +977,19 @@
       </field>
       <field>
         <in_stream_name>INPUT_TABLE_SCHEMA_PARAMETER</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1005,24 +1005,30 @@
   <step>
     <name>DELTA_FIELD_CASTING</name>
     <type>SetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <field_name>casting</field_name>
         <variable_name>DELTA_FIELD_CASTING</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value />
+        <default_value/>
+      </field>
+      <field>
+        <field_name>field_type</field_name>
+        <variable_name>DELTA_FIELD_TYPE</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1038,13 +1044,13 @@
   <step>
     <name>Data cleaner</name>
     <type>UserDefinedJavaClass</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <definitions>
       <definition>
@@ -1102,10 +1108,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <fields>
     </fields>
     <clear_result_fields>N</clear_result_fields>
-    <info_steps />
-    <target_steps />
-    <usage_parameters />
-    <cluster_schema />
+    <info_steps/>
+    <target_steps/>
+    <usage_parameters/>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1121,13 +1127,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Delta field name to lower</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
@@ -1136,15 +1142,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1160,24 +1166,24 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>FIELD_NAME_AND_TYPE_LIST</name>
     <type>SetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <field_name>field_name_type_list</field_name>
         <variable_name>FIELD_NAME_AND_TYPE_LIST</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value />
+        <default_value/>
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1193,24 +1199,24 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>FIELD_NAME_LIST</name>
     <type>SetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <field_name>field_name</field_name>
         <variable_name>FIELD_NAME_LIST</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value />
+        <default_value/>
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1226,23 +1232,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Fields to lower case</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>connection_name</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1250,12 +1256,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       </field>
       <field>
         <in_stream_name>src_table_schema</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1263,12 +1269,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       </field>
       <field>
         <in_stream_name>src_table_name</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1276,19 +1282,19 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       </field>
       <field>
         <in_stream_name>src_column_name</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1304,16 +1310,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Filters the black list</name>
     <type>FilterRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <send_true_to>Checks the black list</send_true_to>
-    <send_false_to />
+    <send_false_to/>
     <compare>
       <condition>
         <negated>N</negated>
@@ -1341,7 +1347,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         </conditions>
       </condition>
     </compare>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1357,13 +1363,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Finds delta field</name>
     <type>StreamLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <from>Column name normalizer</from>
     <input_sorted>N</input_sorted>
@@ -1381,8 +1387,14 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <default>'19000101'</default>
         <type>String</type>
       </value>
+      <value>
+        <name>field_type</name>
+        <rename>field_type</rename>
+        <default/>
+        <type>String</type>
+      </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1398,13 +1410,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Finds partition field</name>
     <type>StreamLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <from>Column name normalizer</from>
     <input_sorted>N</input_sorted>
@@ -1419,11 +1431,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <value>
         <name>casting</name>
         <rename>casting</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1439,13 +1451,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Finds reserved words</name>
     <type>StreamLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <from>Reads reserved words</from>
     <input_sorted>N</input_sorted>
@@ -1460,11 +1472,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <value>
         <name>reserved</name>
         <rename>reserved_words</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1480,23 +1492,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Get connection info</name>
     <type>GetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>CONNECTION_NAME_PARAMETER</name>
         <variable>${CONNECTION_NAME}</variable>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -1505,10 +1517,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <name>INPUT_TABLE_NAME_PARAMETER</name>
         <variable>${INPUT_TABLE_NAME}</variable>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -1517,16 +1529,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <name>INPUT_TABLE_SCHEMA_PARAMETER</name>
         <variable>${INPUT_TABLE_SCHEMA}</variable>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1542,29 +1554,29 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Get delta field</name>
     <type>GetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>delta_field</name>
         <variable>${DELTA_FIELD_IN_METADATA}</variable>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1580,22 +1592,22 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Get table metadata</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>GENERIC_JDBC_CONNECTION</connection>
     <sql>${INPUT_METADATA_STATEMENT}</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1611,21 +1623,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Group all field and type</name>
     <type>GroupBy</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <all_rows>N</all_rows>
     <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore />
+    <field_ignore/>
     <directory>%%java.io.tmpdir%%</directory>
     <prefix>grp</prefix>
     <add_linenr>N</add_linenr>
-    <linenr_fieldname />
+    <linenr_fieldname/>
     <give_back_row>N</give_back_row>
     <group>
       </group>
@@ -1634,10 +1646,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <aggregate>field_name_type_list</aggregate>
         <subject>field_name_type</subject>
         <type>CONCAT_COMMA</type>
-        <valuefield />
+        <valuefield/>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1653,21 +1665,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Group all fields</name>
     <type>GroupBy</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <all_rows>N</all_rows>
     <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore />
+    <field_ignore/>
     <directory>%%java.io.tmpdir%%</directory>
     <prefix>grp</prefix>
     <add_linenr>N</add_linenr>
-    <linenr_fieldname />
+    <linenr_fieldname/>
     <give_back_row>N</give_back_row>
     <group>
       </group>
@@ -1676,10 +1688,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <aggregate>field_name</aggregate>
         <subject>column_name_lower</subject>
         <type>CONCAT_COMMA</type>
-        <valuefield />
+        <valuefield/>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1695,21 +1707,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Group the columns</name>
     <type>GroupBy</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <all_rows>N</all_rows>
     <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore />
+    <field_ignore/>
     <directory>%%java.io.tmpdir%%</directory>
     <prefix>grp</prefix>
     <add_linenr>N</add_linenr>
-    <linenr_fieldname />
+    <linenr_fieldname/>
     <give_back_row>N</give_back_row>
     <group>
       </group>
@@ -1718,10 +1730,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <aggregate>fields</aggregate>
         <subject>fields</subject>
         <type>CONCAT_COMMA</type>
-        <valuefield />
+        <valuefield/>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1737,15 +1749,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Hub</name>
     <type>Dummy</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1761,16 +1773,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Identifies last row</name>
     <type>DetectLastRow</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <resultfieldname>last</resultfieldname>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1786,27 +1798,27 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Join fields</name>
     <type>JoinRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <directory>%%java.io.tmpdir%%</directory>
     <prefix>out</prefix>
     <cache_size>500</cache_size>
-    <main />
+    <main/>
     <compare>
       <condition>
         <negated>N</negated>
-        <leftvalue />
+        <leftvalue/>
         <function>=</function>
-        <rightvalue />
+        <rightvalue/>
       </condition>
     </compare>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1822,13 +1834,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Metadata builder</name>
     <type>UserDefinedJavaClass</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <definitions>
       <definition>
@@ -1877,10 +1889,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <fields>
     </fields>
     <clear_result_fields>N</clear_result_fields>
-    <info_steps />
-    <target_steps />
-    <usage_parameters />
-    <cluster_schema />
+    <info_steps/>
+    <target_steps/>
+    <usage_parameters/>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1896,24 +1908,24 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>PARTITION_FIELD_CASTING</name>
     <type>SetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <field_name>casting</field_name>
         <variable_name>PARTITION_FIELD_CASTING</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value />
+        <default_value/>
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1929,22 +1941,22 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Partition field</name>
     <type>DataGrid</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>partition_field</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1955,7 +1967,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <item>partition_field</item>
       </line>
     </data>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1971,22 +1983,22 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Read blacklist file</name>
     <type>TextFileInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <accept_filenames>N</accept_filenames>
     <passing_through_fields>N</passing_through_fields>
-    <accept_field />
-    <accept_stepname />
+    <accept_field/>
+    <accept_stepname/>
     <separator>;</separator>
     <enclosure>"</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
-    <escapechar />
+    <escapechar/>
     <header>Y</header>
     <nr_headerlines>1</nr_headerlines>
     <footer>N</footer>
@@ -1998,18 +2010,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <nr_lines_doc_header>0</nr_lines_doc_header>
     <noempty>Y</noempty>
     <include>N</include>
-    <include_field />
+    <include_field/>
     <rownum>N</rownum>
     <rownumByFile>N</rownumByFile>
-    <rownum_field />
+    <rownum_field/>
     <format>mixed</format>
     <encoding>UTF-8</encoding>
     <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>${user.home}/.kettle/metadata_blacklist</name>
-      <filemask />
-      <exclude_filemask />
+      <filemask/>
+      <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
@@ -2021,12 +2033,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>connection_name</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <ifnull />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
@@ -2036,12 +2048,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>src_table_schema</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <ifnull />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
@@ -2051,12 +2063,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>src_table_name</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <ifnull />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
@@ -2066,12 +2078,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>src_column_name</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <ifnull />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
@@ -2082,29 +2094,29 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <limit>0</limit>
     <error_ignored>N</error_ignored>
     <skip_bad_files>N</skip_bad_files>
-    <file_error_field />
-    <file_error_message_field />
+    <file_error_field/>
+    <file_error_message_field/>
     <error_line_skipped>N</error_line_skipped>
-    <error_count_field />
-    <error_fields_field />
-    <error_text_field />
-    <bad_line_files_destination_directory />
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
     <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
+    <error_line_files_destination_directory/>
     <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
+    <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>en_US</date_format_locale>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <cluster_schema />
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2120,22 +2132,22 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Reads reserved words</name>
     <type>TextFileInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <accept_filenames>N</accept_filenames>
     <passing_through_fields>N</passing_through_fields>
-    <accept_field />
-    <accept_stepname />
+    <accept_field/>
+    <accept_stepname/>
     <separator>;</separator>
     <enclosure>"</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
-    <escapechar />
+    <escapechar/>
     <header>N</header>
     <nr_headerlines>1</nr_headerlines>
     <footer>N</footer>
@@ -2147,18 +2159,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <nr_lines_doc_header>0</nr_lines_doc_header>
     <noempty>Y</noempty>
     <include>N</include>
-    <include_field />
+    <include_field/>
     <rownum>N</rownum>
     <rownumByFile>N</rownumByFile>
-    <rownum_field />
+    <rownum_field/>
     <format>mixed</format>
-    <encoding />
+    <encoding/>
     <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>${Internal.Job.Filename.Directory}/reserved_words/${TARGET}.txt</name>
-      <filemask />
-      <exclude_filemask />
+      <filemask/>
+      <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
@@ -2170,12 +2182,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>reserved</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <ifnull />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
@@ -2186,29 +2198,29 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <limit>0</limit>
     <error_ignored>N</error_ignored>
     <skip_bad_files>N</skip_bad_files>
-    <file_error_field />
-    <file_error_message_field />
+    <file_error_field/>
+    <file_error_message_field/>
     <error_line_skipped>N</error_line_skipped>
-    <error_count_field />
-    <error_fields_field />
-    <error_text_field />
-    <bad_line_files_destination_directory />
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
     <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
+    <error_line_files_destination_directory/>
     <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
+    <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>pt_BR</date_format_locale>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <cluster_schema />
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2224,15 +2236,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Rejected field</name>
     <type>Dummy</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2248,13 +2260,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Removes undesirable fields</name>
     <type>FilterRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <send_true_to>Hub</send_true_to>
     <send_false_to>Rejected field</send_false_to>
@@ -2263,10 +2275,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <negated>N</negated>
         <leftvalue>check_blacklist</leftvalue>
         <function>IS NULL</function>
-        <rightvalue />
+        <rightvalue/>
       </condition>
     </compare>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2282,13 +2294,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Reserved words replacer</name>
     <type>UserDefinedJavaClass</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <definitions>
       <definition>
@@ -2323,10 +2335,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <fields>
     </fields>
     <clear_result_fields>N</clear_result_fields>
-    <info_steps />
-    <target_steps />
-    <usage_parameters />
-    <cluster_schema />
+    <info_steps/>
+    <target_steps/>
+    <usage_parameters/>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2342,24 +2354,24 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>TABLE_FIELD_LIST</name>
     <type>SetVariable</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <field_name>fields</field_name>
         <variable_name>TABLE_FIELD_LIST</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value />
+        <default_value/>
       </field>
     </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2375,13 +2387,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>To lower</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
@@ -2390,15 +2402,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <trim_type>both</trim_type>
         <lower_upper>lower</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2414,16 +2426,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Writes JSON metadata</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <separator />
-    <enclosure />
+    <separator/>
+    <enclosure/>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
@@ -2431,23 +2443,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>${METADATA_QUEUE_JSON_FILE}</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention />
+      <extention/>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>Y</fast_dump>
@@ -2457,17 +2469,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>json</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2483,13 +2495,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Writes table columns</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <separator>;</separator>
     <enclosure>"</enclosure>
@@ -2500,23 +2512,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>${METADATA_QUEUE_COLUMNS_FILE}</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention />
+      <extention/>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>Y</fast_dump>
@@ -2526,11 +2538,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>column_name</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2539,16 +2551,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
         <name>column_key</name>
         <type>Integer</type>
         <format>#</format>
-        <currency />
+        <currency/>
         <decimal>.</decimal>
         <group>,</group>
-        <nullif />
+        <nullif/>
         <trim_type>both</trim_type>
         <length>1</length>
         <precision>0</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2564,13 +2576,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Writes table field list</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <separator>;</separator>
     <enclosure>"</enclosure>
@@ -2581,23 +2593,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>${METADATA_QUEUE_FIELDS_FILE}</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention />
+      <extention/>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>Y</fast_dump>
@@ -2607,17 +2619,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>fields</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2633,13 +2645,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Writes table fields and type list</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <separator>;</separator>
     <enclosure>"</enclosure>
@@ -2650,23 +2662,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>${METADATA_QUEUE_FIELDS_AND_TYPE_FILE}</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention />
+      <extention/>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>Y</fast_dump>
@@ -2676,17 +2688,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>field_name_type_list</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2702,13 +2714,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   <step>
     <name>Writes table fields name list</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <separator>;</separator>
     <enclosure>"</enclosure>
@@ -2719,23 +2731,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>${METADATA_QUEUE_FIELDS_NAME_FILE}</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention />
+      <extention/>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>Y</fast_dump>
@@ -2745,17 +2757,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
       <field>
         <name>field_name</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
