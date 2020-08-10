@@ -56,9 +56,9 @@ from (
    INNER JOIN dbo.sysobjects so ON c.id = so.id
    INNER JOIN sysusers u ON so.uid = u.uid
    WHERE 1=1
-   AND so.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',''),']','')
-   AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',''),']','')
-   AND c.name = str_replace(str_replace(upper('${PARTITION_FIELD}'),'[',''),']','')
+   AND so.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',null),']',null)
+   AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',null),']',null)
+   AND c.name = str_replace(str_replace(upper('${PARTITION_FIELD}'),'[',null),']',null)
     
    UNION ALL
 
@@ -113,8 +113,8 @@ from (
            INNER JOIN sysindexes i
            ON o.id = i.id
     WHERE 1=1
-    AND o.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',''),']','')
-    AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',''),']','')
+    AND o.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',null),']',null)
+    AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',null),']',null)
     AND((i.status2 & 2 = 2) OR (i.status & 2 = 2))
       UNION ALL 
     SELECT null as fields_database,case when '${CUSTOM_PRIMARY_KEY}'!='' then '${CUSTOM_PRIMARY_KEY}' else null end as fields_custom
@@ -165,8 +165,8 @@ from (
     INNER JOIN sysusers u ON so.uid = u.uid
     WHERE 1=1
     AND(c.status3 & 3) = 0 
-    AND so.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',''),']','')
-    AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',''),']','')
+    AND so.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',null),']',null)
+    AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',null),']',null)
 
 	  UNION ALL
 
