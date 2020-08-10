@@ -25,6 +25,16 @@
         <description/>
       </parameter>
       <parameter>
+        <name>INPUT_TABLE_NAME</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>INPUT_TABLE_SCHEMA</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
         <name>METADATA_DELTA_FILE</name>
         <default_value/>
         <description/>
