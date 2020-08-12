@@ -130,7 +130,6 @@ SELECT * FROM (
 		LOWER( SCHEMA_NAME ) = LOWER( REPLACE( '${INPUT_TABLE_SCHEMA}', '"', '' ) )
 		AND 
 		LOWER( TABLE_NAME ) = LOWER( REPLACE( '${INPUT_TABLE_NAME}', '"', '' ) )
-		
 		UNION ALL
 		
 		SELECT
@@ -151,6 +150,7 @@ SELECT * FROM (
             LOWER( SCHEMA_NAME ) = LOWER( REPLACE( '${INPUT_TABLE_SCHEMA}', '"', '' ) )
             and
             LOWER( TABLE_NAME ) = LOWER( REPLACE( '${INPUT_TABLE_NAME}', '"', '' ) )
+            AND UPPER(COLUMN_NAME) NOT IN (${METADATA_BLACKLIST})
 
         UNION ALL
 

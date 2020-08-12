@@ -70,7 +70,8 @@ SELECT * FROM (
     WHERE
 		LOWER( c.table_schema ) = LOWER('${INPUT_TABLE_SCHEMA}')
    		AND
-		LOWER( c.table_name ) = LOWER('${INPUT_TABLE_NAME}')
+		LOWER( c.table_name ) = LOWER('${INPUT_TABLE_NAME}') 
+        AND UPPER(column_name) NOT IN (${METADATA_BLACKLIST})
 
     UNION ALL
 

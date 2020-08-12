@@ -322,24 +322,14 @@
           <value>${CONNECTION_NAME}</value>
         </parameter>
         <parameter>
-          <name>RAW_SRC_NAME</name>
+          <name>CUSTOM_FIELD</name>
           <stream_name/>
-          <value>${RAW_SRC_NAME}</value>
+          <value>${CUSTOM_FIELD}</value>
         </parameter>
         <parameter>
-          <name>INPUT_TABLE_NAME</name>
+          <name>DELTA_FIELD_IN_METADATA</name>
           <stream_name/>
-          <value>${INPUT_TABLE_NAME}</value>
-        </parameter>
-        <parameter>
-          <name>INPUT_TABLE_SCHEMA</name>
-          <stream_name/>
-          <value>${INPUT_TABLE_SCHEMA}</value>
-        </parameter>
-        <parameter>
-          <name>INPUT_TABLE_NAME_UNIX</name>
-          <stream_name/>
-          <value>${INPUT_TABLE_NAME_UNIX}</value>
+          <value>${DELTA_FIELD_IN_METADATA}</value>
         </parameter>
         <parameter>
           <name>INPUT_METADATA_STATEMENT</name>
@@ -347,44 +337,24 @@
           <value>${INPUT_METADATA_STATEMENT}</value>
         </parameter>
         <parameter>
-          <name>PARTITION_FIELD</name>
+          <name>INPUT_TABLE_NAME</name>
           <stream_name/>
-          <value>${PARTITION_FIELD}</value>
+          <value>${INPUT_TABLE_NAME}</value>
         </parameter>
         <parameter>
-          <name>TIMEZONE_OFFSET</name>
+          <name>INPUT_TABLE_NAME_UNIX</name>
           <stream_name/>
-          <value>${TIMEZONE_OFFSET}</value>
+          <value>${INPUT_TABLE_NAME_UNIX}</value>
         </parameter>
         <parameter>
-          <name>PARTITION_LENGTH</name>
+          <name>INPUT_TABLE_SCHEMA</name>
           <stream_name/>
-          <value>${PARTITION_LENGTH}</value>
+          <value>${INPUT_TABLE_SCHEMA}</value>
         </parameter>
         <parameter>
-          <name>PARTITION_FORMAT</name>
+          <name>METADATA_BLACKLIST</name>
           <stream_name/>
-          <value>${PARTITION_FORMAT}</value>
-        </parameter>
-        <parameter>
-          <name>PARTITION_TYPE</name>
-          <stream_name/>
-          <value>${PARTITION_TYPE}</value>
-        </parameter>
-        <parameter>
-          <name>SCHEMA_NAME</name>
-          <stream_name/>
-          <value>${SCHEMA_NAME}</value>
-        </parameter>
-        <parameter>
-          <name>TABLE_NAME</name>
-          <stream_name/>
-          <value>${TABLE_NAME}</value>
-        </parameter>
-        <parameter>
-          <name>RAWFILE_QUEUE_FILE</name>
-          <stream_name/>
-          <value>${RAWFILE_QUEUE_FILE}</value>
+          <value>${METADATA_BLACKLIST}</value>
         </parameter>
         <parameter>
           <name>METADATA_DELTA_FILE</name>
@@ -397,6 +367,21 @@
           <value>${METADATA_PATH}</value>
         </parameter>
         <parameter>
+          <name>METADATA_QUEUE_COLUMNS_FILE</name>
+          <stream_name/>
+          <value>${METADATA_QUEUE_COLUMNS_FILE}</value>
+        </parameter>
+        <parameter>
+          <name>METADATA_QUEUE_FIELDS_AND_TYPE_FILE</name>
+          <stream_name/>
+          <value>${METADATA_QUEUE_FIELDS_AND_TYPE_FILE}</value>
+        </parameter>
+        <parameter>
+          <name>METADATA_QUEUE_FIELDS_FILE</name>
+          <stream_name/>
+          <value>${METADATA_QUEUE_FIELDS_FILE}</value>
+        </parameter>
+        <parameter>
           <name>METADATA_QUEUE_JSON_FILE</name>
           <stream_name/>
           <value>${METADATA_QUEUE_JSON_FILE}</value>
@@ -407,24 +392,49 @@
           <value>${METADATA_QUEUE_PATH}</value>
         </parameter>
         <parameter>
-          <name>METADATA_QUEUE_COLUMNS_FILE</name>
+          <name>PARTITION_FIELD</name>
           <stream_name/>
-          <value>${METADATA_QUEUE_COLUMNS_FILE}</value>
+          <value>${PARTITION_FIELD}</value>
         </parameter>
         <parameter>
-          <name>METADATA_QUEUE_FIELDS_FILE</name>
+          <name>PARTITION_FORMAT</name>
           <stream_name/>
-          <value>${METADATA_QUEUE_FIELDS_FILE}</value>
+          <value>${PARTITION_FORMAT}</value>
         </parameter>
         <parameter>
-          <name>METADATA_QUEUE_FIELDS_AND_TYPE_FILE</name>
+          <name>PARTITION_LENGTH</name>
           <stream_name/>
-          <value>${METADATA_QUEUE_FIELDS_AND_TYPE_FILE}</value>
+          <value>${PARTITION_LENGTH}</value>
         </parameter>
         <parameter>
-          <name>DELTA_FIELD_IN_METADATA</name>
+          <name>PARTITION_TYPE</name>
           <stream_name/>
-          <value>${DELTA_FIELD_IN_METADATA}</value>
+          <value>${PARTITION_TYPE}</value>
+        </parameter>
+        <parameter>
+          <name>RAWFILE_QUEUE_FILE</name>
+          <stream_name/>
+          <value>${RAWFILE_QUEUE_FILE}</value>
+        </parameter>
+        <parameter>
+          <name>RAW_SRC_NAME</name>
+          <stream_name/>
+          <value>${RAW_SRC_NAME}</value>
+        </parameter>
+        <parameter>
+          <name>SCHEMA_NAME</name>
+          <stream_name/>
+          <value>${SCHEMA_NAME}</value>
+        </parameter>
+        <parameter>
+          <name>TABLE_NAME</name>
+          <stream_name/>
+          <value>${TABLE_NAME}</value>
+        </parameter>
+        <parameter>
+          <name>TIMEZONE_OFFSET</name>
+          <stream_name/>
+          <value>${TIMEZONE_OFFSET}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
@@ -1509,6 +1519,16 @@ cp -rf ${METADATA_QUEUE_PATH}* ${METADATA_PATH}</script>
           <name>DATABASE_TYPE</name>
           <stream_name/>
           <value>${DATABASE_TYPE}</value>
+        </parameter>
+        <parameter>
+          <name>METADATA_BLACKLIST</name>
+          <stream_name/>
+          <value>${METADATA_BLACKLIST}</value>
+        </parameter>
+        <parameter>
+          <name>CUSTOM_FIELD</name>
+          <stream_name/>
+          <value>${CUSTOM_FIELD}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>

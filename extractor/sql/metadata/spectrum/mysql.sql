@@ -152,6 +152,7 @@ SELECT * FROM (
 		LOWER( c.table_schema ) = LOWER('${INPUT_TABLE_SCHEMA}')
    		AND
 		LOWER( c.table_name ) = LOWER('${INPUT_TABLE_NAME}')
+		AND UPPER(COLUMN_NAME) NOT IN (${METADATA_BLACKLIST})
 
     UNION ALL
 

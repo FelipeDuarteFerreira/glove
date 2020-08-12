@@ -17,12 +17,10 @@ SELECT * FROM (
 		''                                              AS encoding
     FROM
         information_schema.columns c
-	WHERE
-		LOWER( c.table_schema ) = LOWER('${INPUT_TABLE_SCHEMA}')
-		AND
-		LOWER( c.table_name ) = LOWER('${INPUT_TABLE_NAME}')
-		AND
-		LOWER( c.column_name ) = LOWER('${PARTITION_FIELD}')
+	WHERE 1=1
+    AND LOWER( c.table_schema ) = LOWER('${INPUT_TABLE_SCHEMA}')
+	AND	LOWER( c.table_name ) = LOWER('${INPUT_TABLE_NAME}')
+	AND	LOWER( c.column_name ) = LOWER('${PARTITION_FIELD}')
 
     UNION ALL
 
@@ -74,11 +72,11 @@ SELECT * FROM (
 		''                      AS encoding
     FROM
 		information_schema.columns c
-   	WHERE
-		lower( c.table_schema ) = lower('${INPUT_TABLE_SCHEMA}')
-   		AND
-		lower( c.table_name ) = lower('${INPUT_TABLE_NAME}')
-
+   	WHERE 1=1 
+    AND LOWER ( c.table_schema ) = lower('${INPUT_TABLE_SCHEMA}')
+   	AND LOWER( c.table_name ) = lower('${INPUT_TABLE_NAME}')
+	AND UPPER(c.column_name) NOT IN (${METADATA_BLACKLIST})
+    
     UNION ALL
 
     SELECT

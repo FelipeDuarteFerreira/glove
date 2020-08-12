@@ -167,7 +167,7 @@ from (
     AND(c.status3 & 3) = 0 
     AND so.name = str_replace(str_replace(upper('${INPUT_TABLE_NAME}'),'[',null),']',null)
     AND u.name = str_replace(str_replace(upper('${INPUT_TABLE_SCHEMA}'),'[',null),']',null)
-
+    AND UPPER(c.name) NOT IN (${METADATA_BLACKLIST})
 	  UNION ALL
 
     SELECT
