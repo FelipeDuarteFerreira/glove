@@ -641,7 +641,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>48</yloc>
+      <yloc>32</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -653,8 +653,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>608</yloc>
+      <xloc>496</xloc>
+      <yloc>592</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -665,8 +665,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>496</yloc>
+      <xloc>496</xloc>
+      <yloc>480</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -702,8 +702,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>496</yloc>
+      <xloc>224</xloc>
+      <yloc>480</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -733,7 +733,7 @@ fi</script>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>272</yloc>
+      <yloc>256</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -765,7 +765,7 @@ GLOVE_STORARE_BUCKET_DISASTER_RECOVERY	== ${GLOVE_STORARE_BUCKET_DISASTER_RECOVE
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>160</yloc>
+      <yloc>144</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -803,7 +803,7 @@ GLOVE_STORARE_BUCKET_DISASTER_RECOVERY	== ${GLOVE_STORARE_BUCKET_DISASTER_RECOVE
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>384</yloc>
+      <yloc>368</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -822,29 +822,97 @@ UUID == ${UUID}
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>496</yloc>
+      <yloc>480</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Delete trash</name>
+      <description />
+      <type>DELETE_FOLDERS</type>
+      <attributes />
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${GLOVE_TEMP}/${YESTERDAY}/</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>496</xloc>
+      <yloc>368</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Check if a folder is empty</name>
+      <description />
+      <type>FOLDER_IS_EMPTY</type>
+      <attributes />
+      <foldername>${GLOVE_TEMP}/${YESTERDAY}/</foldername>
+      <include_subfolders>N</include_subfolders>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
+      <yloc>480</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Delete temp</name>
+      <description />
+      <type>DELETE_FOLDERS</type>
+      <attributes />
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${GLOVE_TEMP}/${DATE}/named_query/${UUID}/</name>
+        </field>
+        <field>
+          <name>${GLOVE_TEMP}/${DATE}/database/${UUID}/</name>
+        </field>
+        <field>
+          <name>${GLOVE_TEMP}/${DATE}/file/${UUID}/</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>224</xloc>
+      <yloc>592</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Cleanup window</name>
+      <description />
+      <type>SIMPLE_EVAL</type>
+      <attributes />
+      <valuetype>variable</valuetype>
+      <fieldname />
+      <variablename>${HOUR}</variablename>
+      <fieldtype>number</fieldtype>
+      <mask />
+      <comparevalue>${GLOVE_CLEANUP_HOUR}</comparevalue>
+      <minvalue>19</minvalue>
+      <maxvalue>20</maxvalue>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
+      <yloc>368</yloc>
       <attributes_kjc />
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Module selector</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Module selector</from>
-      <to>Fail extracting data</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>Setup</to>
@@ -888,6 +956,78 @@ UUID == ${UUID}
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete trash</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Module selector</from>
+      <to>Check if a folder is empty</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check if a folder is empty</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Module selector</from>
+      <to>Delete temp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete temp</from>
+      <to>Fail extracting data</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Check if a folder is empty</from>
+      <to>Cleanup window</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Cleanup window</from>
+      <to>Delete trash</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Cleanup window</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

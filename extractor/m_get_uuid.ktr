@@ -451,10 +451,35 @@
       <to>Format date</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Get date</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Format date </to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Format date </from>
+      <to>YESTERDAY</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get date</from>
+      <to>Format hour </to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Format hour </from>
+      <to>HOUR</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
-    <name>Generate UUID</name>
-    <type>RandomValue</type>
+    <name>Calculator</name>
+    <type>Calculator</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -463,12 +488,37 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <fields>
-      <field>
-        <name>UUID</name>
-        <type>random uuid</type>
-      </field>
-    </fields>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>delta</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>-1</field_a>
+      <field_b />
+      <field_c />
+      <value_type>None</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>yesterday</field_name>
+      <calc_type>ADD_DAYS</calc_type>
+      <field_a>date</field_a>
+      <field_b>delta</field_b>
+      <field_c />
+      <value_type>Date</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
     <attributes />
     <cluster_schema />
     <remotesteps>
@@ -478,122 +528,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>UUID</name>
-    <type>SetVariable</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <field_name>UUID</field_name>
-        <variable_name>UUID</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value />
-      </field>
-    </fields>
-    <use_formatting>Y</use_formatting>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>304</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Format date</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>date</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>date</name>
-        <rename>date</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>yyyy-MM-dd</conversion_mask>
-        <date_format_lenient>true</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get date</name>
-    <type>SystemInfo</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>date</name>
-        <type>system date (fixed)</type>
-      </field>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>32</yloc>
+      <xloc>96</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -626,8 +562,317 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>32</yloc>
+      <xloc>336</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Format date</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>date</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>date</name>
+        <rename>date</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Format date </name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>yesterday</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>yesterday</name>
+        <rename>yesterday</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Format hour </name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>date</name>
+        <rename>hour</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>hour</name>
+        <rename>hour</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>HH</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Generate UUID</name>
+    <type>RandomValue</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>UUID</name>
+        <type>random uuid</type>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get date</name>
+    <type>SystemInfo</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>date</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>HOUR</name>
+    <type>SetVariable</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <field_name>hour</field_name>
+        <variable_name>HOUR</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value />
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UUID</name>
+    <type>SetVariable</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <field_name>UUID</field_name>
+        <variable_name>UUID</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value />
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>YESTERDAY</name>
+    <type>SetVariable</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <field_name>yesterday</field_name>
+        <variable_name>YESTERDAY</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value />
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
+    <attributes />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
