@@ -334,7 +334,7 @@ if [ ${QUEUE_FILE_COUNT} -gt 0 ]; then
 				echo "EXPORT_BUCKET was not defined!"
 			fi
 		fi 
-		
+
 		# Remove o header do csv intermediário.
 		echo "Removing header from ${RAWFILE_QUEUE_FILE}!"
 		tail -n +2 ${RAWFILE_QUEUE_FILE} > ${RAWFILE_QUEUE_FILE}.tmp

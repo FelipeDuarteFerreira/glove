@@ -289,23 +289,34 @@ if [ ${QUEUE_FILE_COUNT} -gt 0 ]; then
 
 	# Particiona o arquivo intermediário.
 	echo "Splitting csv file!"
-	split -l ${PARTITION_LENGTH} -a 4 --numeric-suffixes=1 --additional-suffix=.csv ${RAWFILE_QUEUE_FILE} ${DATA_FILE}_
+	if [ ${DEBUG} = 1 ] ; then
+		echo "DEBUG:java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
+			--folder=${RAWFILE_QUEUE_PATH} \
+			--filename=*.csv \
+			--delimiter=${DELIMITER} \
+			--target=csv \
+			--splitStrategy=${SPLIT_STRATEGY} \
+			--partition=-1 \
+			--thread=${THREAD} \	
+			--escape=${QUOTE_ESCAPE} \			
+			--header \
+			--replace \
+			--debug=${DEBUG}"
+	fi
+
+    java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
+		--folder=${RAWFILE_QUEUE_PATH} \
+		--filename=*.csv \
+		--delimiter=${DELIMITER} \
+		--target=csv \
+		--splitStrategy=${SPLIT_STRATEGY} \
+		--partition=-1 \
+		--thread=${THREAD} \
+		--escape=${QUOTE_ESCAPE} \
+		--header \
+		--replace \
+		--debug=${DEBUG}			
 	error_check
-	
-	# Remove o arquivo original.
-	echo "Removing file ${RAWFILE_QUEUE_FILE}!"
-	rm -f ${RAWFILE_QUEUE_FILE}
-	error_check	
-
-   	# Remove o header do csv intermediário.
-    if [ ${MODULE} == "query" ] || [ ${MODULE} == "file" ]; then
-    	echo "Removing header from ${DATA_FILE}_0001.csv!"
-    	tail -n +2 ${DATA_FILE}_0001.csv > ${DATA_FILE}_0001.tmp
-		error_check
-
-    	mv -f ${DATA_FILE}_0001.tmp ${DATA_FILE}_0001.csv;
-		error_check
-    fi
 
 	# Compacta os arquivos particionados.
 	echo "Compacting csv files!"

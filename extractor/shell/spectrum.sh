@@ -339,15 +339,36 @@ full_load(){
 		SPLIT=0
 	fi
 
+	# Particiona o arquivo intermediário.
 	if [ ${SPLIT} == 1 ]; then
-		# Quebra o arquivo original em blocos menores.
 		echo "Splitting csv file!"
-		split -l ${PARTITION_LENGTH} -a 4 --numeric-suffixes=1 --additional-suffix=.csv ${RAWFILE_QUEUE_FILE} ${DATA_FILE}_
-		error_check
+		if [ ${DEBUG} = 1 ] ; then
+			echo "DEBUG:java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
+				--folder=${RAWFILE_QUEUE_PATH} \
+				--filename=*.csv \
+				--delimiter=${DELIMITER} \
+				--target=csv \
+				--splitStrategy=${SPLIT_STRATEGY} \
+				--partition=-1 \
+				--thread=${THREAD} \	
+				--escape=${QUOTE_ESCAPE} \			
+				--header \
+				--replace \
+				--debug=${DEBUG}"
+		fi
 
-		# Remove o arquivo original.
-		echo "Removing file ${RAWFILE_QUEUE_FILE}!"
-		rm -f ${RAWFILE_QUEUE_FILE}
+		java -jar ${GLOVE_HOME}/extractor/lib/converter.jar \
+			--folder=${RAWFILE_QUEUE_PATH} \
+			--filename=*.csv \
+			--delimiter=${DELIMITER} \
+			--target=csv \
+			--splitStrategy=${SPLIT_STRATEGY} \
+			--partition=-1 \
+			--thread=${THREAD} \
+			--escape=${QUOTE_ESCAPE} \
+			--header \
+			--replace \
+			--debug=${DEBUG}			
 		error_check
 	fi
 

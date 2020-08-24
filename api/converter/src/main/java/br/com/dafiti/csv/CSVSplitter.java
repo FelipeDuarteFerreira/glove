@@ -55,6 +55,8 @@ public class CSVSplitter implements Runnable {
     private final boolean replace;
     private final String splitStrategy;
 
+    private static final int SLICES = 65;
+
     /**
      * Constructor.
      *
@@ -93,7 +95,7 @@ public class CSVSplitter implements Runnable {
      */
     @Override
     public void run() {
-        Logger.getLogger(this.getClass()).info("Converting CSV to CSV");
+        Logger.getLogger(this.getClass()).info("Splitting CSV file");
 
         try {
             if (splitStrategy.equalsIgnoreCase("FAST")) {
@@ -107,7 +109,7 @@ public class CSVSplitter implements Runnable {
                 csvFile.delete();
             }
         } catch (IOException ex) {
-            Logger.getLogger(this.getClass()).error("Error [" + ex + "] converting CSV to CSV");
+            Logger.getLogger(this.getClass()).error("Error [" + ex + "] splitting CSV file");
             System.exit(1);
         }
     }
@@ -142,7 +144,13 @@ public class CSVSplitter implements Runnable {
                         }
 
                         if (part.isEmpty()) {
-                            String partition = split[partitionColumn].replaceAll("\\W", "");
+                            String partition;
+
+                            if (partitionColumn == -1) {
+                                partition = String.valueOf(Math.abs(Math.floorMod(lineNumber, SLICES)));
+                            } else {
+                                partition = split[partitionColumn].replaceAll("\\W", "");
+                            }
 
                             if (!partitions.containsKey(partition)) {
                                 String partitionPath = csvFile.getParent() + "/" + partition;
@@ -208,7 +216,13 @@ public class CSVSplitter implements Runnable {
 
         while ((record = csvParser.parseNext()) != null) {
             if (!(lineNumber == 0 && header)) {
-                String partition = record[partitionColumn].replaceAll("\\W", "");
+                String partition;
+
+                if (partitionColumn == -1) {
+                    partition = String.valueOf(Math.abs(Math.floorMod(lineNumber, SLICES)));
+                } else {
+                    partition = record[partitionColumn].replaceAll("\\W", "");
+                }
 
                 if (!partitions.containsKey(partition)) {
                     String partitionPath = csvFile.getParent() + "/" + partition;
